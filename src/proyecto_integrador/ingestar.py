@@ -152,7 +152,7 @@ class Ingestar:
         Ejemplo:
         --------
         dataset_path = ingestar.download_dataset_zip(
-            "jlgrego/apartamentos-venda-na-cidade-de-sao-paulo-sp"
+            "blastchar/telco-customer-churn"
         )
 
         NOTA:
