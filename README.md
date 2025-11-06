@@ -49,14 +49,4 @@ Este dataset contiene información de clientes de una empresa de telecomunicacio
 
 ---
 
-## 🧠 4. Ideas para análisis
 
-Análisis exploratorio de churn por tipo de contrato, edad o método de pago.
-
-Visualización de correlaciones entre servicios contratados y deserción.
-
-Modelos predictivos: regresión logística, árboles de decisión, Random Forest, XGBoost.
-
-Segmentación de clientes por riesgo de churn.
-
----
