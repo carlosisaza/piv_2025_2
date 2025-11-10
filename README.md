@@ -5,13 +5,13 @@
 
 ## 📊 1. Problema / Caso de Uso
 
-# ¿Qué necesidad resolverás? (El Problema)
+### ¿Qué necesidad resolverás? (El Problema)
 La necesidad principal es transformar el proceso de retención de clientes de un modelo reactivo (actuar solo cuando el cliente llama a cancelar) a un modelo proactivo (identificar quién podría irse antes de que llame). El problema es que la empresa Telco desconoce los factores y perfiles de los clientes que abandonan el servicio, lo que genera una alta tasa de abandono (churn) y una pérdida financiera significativa, dado que es más costoso adquirir nuevos clientes que retener los existentes.
 
-# ¿Para quién? (El Cliente)
+### ¿Para quién? (El Cliente)
 La solución está dirigida principalmente al Departamento de Retención de Clientes y al Departamento de Marketing de la empresa Telco.
 
-# ¿Por qué requiere analítica? (La Justificación)
+### ¿Por qué requiere analítica? (La Justificación)
 Con un volumen de 7,043 clientes, cada uno con 21 atributos, es humanamente imposible para el departamento de retención identificar patrones de abandono de forma manual. La analítica (específicamente la estadística descriptiva y el perfilamiento) es indispensable para procesar este volumen de datos y responder preguntas clave: ¿Qué tipo de contrato es más propenso al abandono? ¿La falta de soporte técnico impacta la decisión? ¿Los clientes con más servicios contratados son más leales? Solo la analítica puede generar los insumos accionables (perfiles de riesgo) que el equipo de retención necesita para focalizar sus esfuerzos.
 
 ---
@@ -25,6 +25,7 @@ Nombre del Dataset: Telco Customer Churn.
 ---
 
 ## 🧩 3. Variables relevantes (Clave)
+
 Se han identificado 5 variables clave (de las 21 disponibles) que son fundamentales para el análisis de perfilamiento:
 
 1.	Churn (Variable Objetivo):
@@ -53,6 +54,9 @@ Utilidad: Permite analizar la sensibilidad al precio. Podremos determinar si los
 ## 🧩 4. Trazabilidad del Dataset (Fuente y Licencia)
 
 Enlace: https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+
 Autor/Publicador: BlastChar
+
 Fuente Original (Citada por el publicador): IBM Sample Data Sets
+
 Licencia: No especificada (Unknown).
