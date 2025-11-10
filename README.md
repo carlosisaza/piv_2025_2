@@ -1,52 +1,52 @@
 # 🏙️ Proyecto Integrado 5 – Analizar y predecir la deserción de clientes (churn)
 
-## 📘 1. Descripción del proyecto
+## Definición de la Problemática y Selección del Dataset (EA1)
 
-El propósito principal de este proyecto es construir modelos de Machine Learning que permitan:
 
-- Predecir si un cliente abandonará el servicio.
-- Identificar patrones de comportamiento asociados al churn.
-- Diseñar estrategias de retención basadas en datos.
-
-## 📊 2. Dataset utilizado
-
-**Fuente:** Kaggle  
-**Nombre:** *Telco Customer Churn*  
-**Autor:** [IBM Sample Data Sets]  
-**Enlace:** [https://www.kaggle.com/datasets/blastchar/telco-customer-churn]
-**Archivo principal:** `WA_Fn-UseC_-Telco-Customer-Churn.csv`  
-**Licencia:** Según Kaggle, licencia abierta (normalmente *CC BY 4.0*).  
-**Fecha de descarga:** Octubre de 2025  
-
-Este dataset contiene información de clientes de una empresa de telecomunicaciones. Cada fila representa un cliente y cada columna describe atributos relacionados con servicios contratados, comportamiento de pago, y datos demográficos.
+## 📊 1. Problema / Caso de Uso
+●	¿Qué necesidad resolverás? (El Problema)
+La necesidad principal es transformar el proceso de retención de clientes de un modelo reactivo (actuar solo cuando el cliente llama a cancelar) a un modelo proactivo (identificar quién podría irse antes de que llame). El problema es que la empresa Telco desconoce los factores y perfiles de los clientes que abandonan el servicio, lo que genera una alta tasa de abandono (churn) y una pérdida financiera significativa, dado que es más costoso adquirir nuevos clientes que retener los existentes.
+●	¿Para quién? (El Cliente)
+La solución está dirigida principalmente al Departamento de Retención de Clientes y al Departamento de Marketing de la empresa Telco.
+●	¿Por qué requiere analítica? (La Justificación)
+Con un volumen de 7,043 clientes, cada uno con 21 atributos, es humanamente imposible para el departamento de retención identificar patrones de abandono de forma manual. La analítica (específicamente la estadística descriptiva y el perfilamiento) es indispensable para procesar este volumen de datos y responder preguntas clave: ¿Qué tipo de contrato es más propenso al abandono? ¿La falta de soporte técnico impacta la decisión? ¿Los clientes con más servicios contratados son más leales? Solo la analítica puede generar los insumos accionables (perfiles de riesgo) que el equipo de retención necesita para focalizar sus esfuerzos.
 
 ---
 
-## 🧩 3. Variables relevantes
-| Columna | Descripción |
-|---------|-------------|
-| `customerID` | Identificador único del cliente |
-| `gender` | Género del cliente (Male, Female) |
-| `SeniorCitizen` | Si el cliente es adulto mayor (1 = sí, 0 = no) |
-| `Partner` | Si tiene pareja (Yes, No) |
-| `Dependents` | Si tiene personas a cargo (Yes, No) |
-| `tenure` | Meses como cliente |
-| `PhoneService` | Si tiene servicio telefónico (Yes, No) |
-| `MultipleLines` | Si tiene múltiples líneas (Yes, No, No phone service) |
-| `InternetService` | Tipo de internet (DSL, Fiber optic, No) |
-| `OnlineSecurity` | Servicio de seguridad en línea (Yes, No, No internet service) |
-| `OnlineBackup` | Servicio de respaldo en línea (Yes, No, No internet service) |
-| `DeviceProtection` | Protección de dispositivos (Yes, No, No internet service) |
-| `TechSupport` | Soporte técnico (Yes, No, No internet service) |
-| `StreamingTV` | Servicio de TV por streaming (Yes, No, No internet service) |
-| `StreamingMovies` | Servicio de películas por streaming (Yes, No, No internet service) |
-| `Contract` | Tipo de contrato (Month-to-month, One year, Two year) |
-| `PaperlessBilling` | Si usa facturación electrónica (Yes, No) |
-| `PaymentMethod` | Método de pago (Electronic check, Mailed check, etc.) |
-| `MonthlyCharges` | Valor mensual facturado |
-| `TotalCharges` | Total facturado durante la relación con el cliente |
-| `Churn` | Variable objetivo: si el cliente se fue (Yes, No) |
+## 📊 2. Selección del Dataset
+
+●	Fuente Seleccionada: Se ha seleccionado un dataset de Kaggle.
+●	Nombre del Dataset: Telco Customer Churn.
 
 ---
 
+## 🧩 3. Variables relevantes (Clave)
+Se han identificado 5 variables clave (de las 21 disponibles) que son fundamentales para el análisis de perfilamiento:
+1.	Churn (Variable Objetivo):
+•	Descripción: Indica si el cliente abandonó ("Yes") o no ("No") en el último mes.
+•	Utilidad: Es la variable principal de nuestro análisis. Todas las demás variables se cruzarán contra esta para calcular la tasa de abandono de cada segmento.
 
+2.	Contract (Tipo de Contrato):
+•	Descripción: El tipo de contrato del cliente (Ej. "Month-to-month", "One year", "Two year").
+•	Utilidad: Es una de las variables predictoras más fuertes. Nuestra hipótesis es que los clientes “Mes a Mes” tienen una tasa de abandono significativamente mayor al no tener ataduras a largo plazo.
+
+3.	tenure (Antigüedad):
+•	Descripción: El número de meses que el cliente ha estado con la compañía.
+•	Utilidad: Permite perfilar si el abandono ocurre en clientes nuevos (con baja antigüedad, quizás por problemas de onboarding) o en clientes antiguos (quizás por falta de ofertas de renovación).
+
+4.	TechSupport (Soporte Técnico):
+•	Descripción: Indica si el cliente tiene contratado el servicio de soporte técnico ("Yes", "No", "No internet service").
+•	Utilidad: Es clave para el perfilamiento de servicios. Nos permite evaluar si la percepción de "estar protegido" con soporte técnico reduce activamente la tasa de abandono.
+
+5.	MonthlyCharges (Cargos Mensuales):
+•	Descripción: El monto que el cliente paga cada mes.
+•	Utilidad: Permite analizar la sensibilidad al precio. Podremos determinar si los clientes que pagan montos más altos tienen mayor probabilidad de irse, justificando estrategias de descuento focalizadas.
+
+---
+
+## 🧩 4. Trazabilidad del Dataset (Fuente y Licencia)
+
+Enlace: https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+•	Autor/Publicador: BlastChar
+•	Fuente Original (Citada por el publicador): IBM Sample Data Sets
+•	Licencia: No especificada (Unknown).
