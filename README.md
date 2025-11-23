@@ -60,3 +60,26 @@ Autor/Publicador: BlastChar
 Fuente Original (Citada por el publicador): IBM Sample Data Sets
 
 Licencia: No especificada (Unknown).
+
+
+## Procedimiento de Limpieza y Enriquecimiento (Fase 2)
+
+Para la segunda fase del proyecto, se implementó un proceso de depuración y enriquecimiento de datos utilizando el script analysis_ea2.py. El procedimiento se estructuró en tres pasos:
+
+i.	Limpieza e Imputación: Se detectaron valores nulos en la variable TotalCharges (espacios vacíos correspondientes a clientes nuevos). Estos fueron imputados con el valor 0. Además, se normalizaron las variables categóricas (como PaymentMethod) convirtiendo los textos a minúsculas para estandarización.
+
+ii.	Enriquecimiento Temporal: Dado que el dataset original carecía de fechas, se generaron datos sintéticos coherentes. Utilizando la variable tenure (antigüedad en meses) y una fecha de corte al 01/01/2025, se calculó retrospectivamente la SubscriptionDate para cada cliente.
+iii.	Desglose de Variables: Se derivaron nuevas columnas: Año, Mes y Día, habilitando el análisis de estacionalidad.
+
+## Metodología
+
+5.1. Enfoque del Proyecto
+
+Se utiliza un enfoque analítico-descriptivo, centrado en la ingeniería de datos (ETL) y el análisis exploratorio (EDA).
+
+Herramientas Tecnológicas
+
+•	Python (Pandas/Seaborn): Para manipulación de datos y visualización.
+
+•	SQLite: Para almacenamiento y consultas SQL.
+
