@@ -1,0 +1,3966 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7b19ed39ac662bc6d33fdf733dbffcc7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_7b19ed39ac662bc6d33fdf733dbffcc7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7b19ed39ac662bc6d33fdf733dbffcc7 = L.map(
+                "map_7b19ed39ac662bc6d33fdf733dbffcc7",
+                {
+                    center: [36.7783, -119.4179],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_fd9a22bf215bbdc2c1df63d572ab032c = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_fd9a22bf215bbdc2c1df63d572ab032c.addTo(map_7b19ed39ac662bc6d33fdf733dbffcc7);
+        
+    
+            var heat_map_98c0ab66ddd008d1ecd07feb61f4f0bb = L.heatLayer(
+                [[32.908204366718586, -116.9700917545931, 119.7140229713496], [34.10631503891248, -118.27913686857033, 75.09322097421024], [32.76236611863574, -117.1282165046203, 71.69421274954534], [37.833897344157485, -122.39501717130186, 60.84920042326299], [36.859410833150925, -119.74355803431489, 65.56935518326866], [37.84140220058989, -122.39991509302578, 63.526312098060004], [34.04233691346601, -118.24824621101608, 62.7915367927301], [36.68382213812894, -119.67789048509296, 88.83342088859789], [38.46131439914985, -121.45134438463333, 81.85934313967135], [34.02504443909463, -118.12575799881606, 117.61431909257207], [37.797251315664965, -122.48613353584952, 95.10661622340353], [36.693227415543205, -119.89891488665455, 76.0662300775441], [37.89751296150836, -122.46221094009105, 109.49013493787143], [37.780970683198795, -122.4580291277183, 75.18533285932958], [38.55003900762889, -121.62019092108702, 116.90259417085582], [37.81200904430272, -122.30917293206502, 89.007614610388], [38.57493292984206, -121.5537927072659, 100.63858729438095], [34.05469533855728, -118.32158788327183, 66.28634028430776], [37.80878591320478, -122.4795803562977, 85.07895392917126], [36.73665593983254, -119.80464378351633, 53.813413191444326], [38.5603135730511, -121.49929216613462, 80.08505341745696], [32.57037998214031, -116.84188391544753, 100.39834595508464], [36.476467434835584, -119.75258997832287, 68.56224914221029], [33.91718088018789, -118.19151774632533, 82.57513089012197], [36.87640236265124, -119.62265305775358, 85.81573615264756], [32.80702519059526, -117.33527048609629, 92.46173416111807], [36.68463360104632, -119.70550375368522, 77.50839225076237], [32.91465464353265, -117.09995639710117, 56.917219059257604], [34.13065908622615, -118.32023152962769, 74.87623180433208], [38.647984987644975, -121.44418052674357, 99.46471192081337], [38.683292474360236, -121.54791813998361, 99.1663944018288], [36.922595044450816, -119.98319916070375, 50.26416830985099], [38.573907297976355, -121.58276367711453, 96.23989636436747], [36.73765820012458, -119.64531145524806, 97.46879129233233], [38.7232611243762, -121.46310609880841, 107.79070757078857], [32.63974013049579, -116.94775641451882, 98.24708344256628], [36.62062813888109, -119.83590763661662, 109.93842774459483], [36.588948199935835, -119.76462637048567, 104.83079274889855], [36.71804395177744, -119.6300780461121, 92.55284564879108], [38.52534973471841, -121.5032796353252, 68.69515391788559], [32.60452097100347, -117.12367710174428, 56.96714186368584], [38.570984567113975, -121.53499600123733, 91.2604327577962], [37.821245122314416, -122.36489007354116, 117.28063482652153], [34.052980918549856, -118.09245001037507, 88.13918339706584], [36.88122195195023, -119.85050532065601, 78.45650152093573], [32.78714876989145, -117.11528354295335, 95.83063760635129], [32.69611493297883, -117.17669113739605, 88.30620043429263]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 15,
+  "blur": 10,
+  "gradient": {
+  0.4: "purple",
+  0.65: "orange",
+  1: "red",
+},
+}
+            );
+        
+    
+            heat_map_98c0ab66ddd008d1ecd07feb61f4f0bb.addTo(map_7b19ed39ac662bc6d33fdf733dbffcc7);
+        
+    
+            var marker_cluster_b4da91ad55b5914e44f530a2232bcbaf = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_cb6a67bab4cdaed268d833a19bf22530 = L.marker(
+                [36.88122195195023, -119.85050532065601],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_943ade3d1dc8d55b551025339a7af531 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d088b96aae8b8e32244885c53dd2580e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e89d7b13f3e753b51c9f94832717614e = $(`<div id="html_e89d7b13f3e753b51c9f94832717614e" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 95<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $78.46<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 71 meses     </div>     </div>`)[0];
+                popup_d088b96aae8b8e32244885c53dd2580e.setContent(html_e89d7b13f3e753b51c9f94832717614e);
+            
+        
+
+        marker_cb6a67bab4cdaed268d833a19bf22530.bindPopup(popup_d088b96aae8b8e32244885c53dd2580e)
+        ;
+
+        
+    
+    
+                marker_cb6a67bab4cdaed268d833a19bf22530.setIcon(icon_943ade3d1dc8d55b551025339a7af531);
+            
+    
+            var marker_3c7b9a9546e523cdba2df7d3e2ba1a14 = L.marker(
+                [32.76236611863574, -117.1282165046203],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_2f0bb3f5ef0c925c359cea5286978537 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_deca4f98869f3ff68bf1d4ab97524286 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_654fc67ff8ef7bdc2cc103e635a1d176 = $(`<div id="html_654fc67ff8ef7bdc2cc103e635a1d176" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 6<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $71.69<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 12 meses     </div>     </div>`)[0];
+                popup_deca4f98869f3ff68bf1d4ab97524286.setContent(html_654fc67ff8ef7bdc2cc103e635a1d176);
+            
+        
+
+        marker_3c7b9a9546e523cdba2df7d3e2ba1a14.bindPopup(popup_deca4f98869f3ff68bf1d4ab97524286)
+        ;
+
+        
+    
+    
+                marker_3c7b9a9546e523cdba2df7d3e2ba1a14.setIcon(icon_2f0bb3f5ef0c925c359cea5286978537);
+            
+    
+            var marker_2b73b8d16dc5a5627a82c06f90bba7d5 = L.marker(
+                [32.76489659764874, -117.14729580938503],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_eec8968edb390b2fc9871f60b7a16dea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a9ddf969c6c424c0b400622f1d954a85 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_58198b78c534d3fb6128c0ee1de930cb = $(`<div id="html_58198b78c534d3fb6128c0ee1de930cb" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 52<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $103.29<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 42 meses     </div>     </div>`)[0];
+                popup_a9ddf969c6c424c0b400622f1d954a85.setContent(html_58198b78c534d3fb6128c0ee1de930cb);
+            
+        
+
+        marker_2b73b8d16dc5a5627a82c06f90bba7d5.bindPopup(popup_a9ddf969c6c424c0b400622f1d954a85)
+        ;
+
+        
+    
+    
+                marker_2b73b8d16dc5a5627a82c06f90bba7d5.setIcon(icon_eec8968edb390b2fc9871f60b7a16dea);
+            
+    
+            var marker_6eb13859b13b2a66f967e0461c3543a0 = L.marker(
+                [38.677133284289, -121.40092719904291],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_85a668015aed259fd2f6c9da0774ee90 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3d46df4714d6cbbfa9d6e844cc0575d4 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5dc5120006296512123d752d1160e44e = $(`<div id="html_5dc5120006296512123d752d1160e44e" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 61<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $53.59<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 26 meses     </div>     </div>`)[0];
+                popup_3d46df4714d6cbbfa9d6e844cc0575d4.setContent(html_5dc5120006296512123d752d1160e44e);
+            
+        
+
+        marker_6eb13859b13b2a66f967e0461c3543a0.bindPopup(popup_3d46df4714d6cbbfa9d6e844cc0575d4)
+        ;
+
+        
+    
+    
+                marker_6eb13859b13b2a66f967e0461c3543a0.setIcon(icon_85a668015aed259fd2f6c9da0774ee90);
+            
+    
+            var marker_d19566365ecccb97a037cf18f6e2f855 = L.marker(
+                [36.643550212823456, -119.73340502356051],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_87e5254f70d088ec9a5077e0b5a54935 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9afce7af1b169fc6b106661db6c57163 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_13d38a18cd91ed2843cbe4869f03f937 = $(`<div id="html_13d38a18cd91ed2843cbe4869f03f937" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 19<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $91.94<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 34 meses     </div>     </div>`)[0];
+                popup_9afce7af1b169fc6b106661db6c57163.setContent(html_13d38a18cd91ed2843cbe4869f03f937);
+            
+        
+
+        marker_d19566365ecccb97a037cf18f6e2f855.bindPopup(popup_9afce7af1b169fc6b106661db6c57163)
+        ;
+
+        
+    
+    
+                marker_d19566365ecccb97a037cf18f6e2f855.setIcon(icon_87e5254f70d088ec9a5077e0b5a54935);
+            
+    
+            var marker_b161884b2d9fc1e09821c5ba65667f72 = L.marker(
+                [32.60452097100347, -117.12367710174428],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_c38fab8126b6d7b0ac411048879af6ef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1642682caab1a16e416a69cfc9285c30 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_29d3a2cca28ab8b33a459b8219be848c = $(`<div id="html_29d3a2cca28ab8b33a459b8219be848c" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 87<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $56.97<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 11 meses     </div>     </div>`)[0];
+                popup_1642682caab1a16e416a69cfc9285c30.setContent(html_29d3a2cca28ab8b33a459b8219be848c);
+            
+        
+
+        marker_b161884b2d9fc1e09821c5ba65667f72.bindPopup(popup_1642682caab1a16e416a69cfc9285c30)
+        ;
+
+        
+    
+    
+                marker_b161884b2d9fc1e09821c5ba65667f72.setIcon(icon_c38fab8126b6d7b0ac411048879af6ef);
+            
+    
+            var marker_c594b3bf111cff8a94253d15aa87eeae = L.marker(
+                [34.092943083198094, -118.08810601439863],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_d0e4a9496e04396632f0d4f947743dda = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_304dfcbfed8205208b46c115ba6a8d2f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_1de15b3a086ecaf6619d877fc7613455 = $(`<div id="html_1de15b3a086ecaf6619d877fc7613455" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 28<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $111.14<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 28 meses     </div>     </div>`)[0];
+                popup_304dfcbfed8205208b46c115ba6a8d2f.setContent(html_1de15b3a086ecaf6619d877fc7613455);
+            
+        
+
+        marker_c594b3bf111cff8a94253d15aa87eeae.bindPopup(popup_304dfcbfed8205208b46c115ba6a8d2f)
+        ;
+
+        
+    
+    
+                marker_c594b3bf111cff8a94253d15aa87eeae.setIcon(icon_d0e4a9496e04396632f0d4f947743dda);
+            
+    
+            var marker_1a5bda17637683909f220baa9c8839e6 = L.marker(
+                [32.642187383776644, -117.12854939312614],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_890d8ba4cf9e197f62750e2a5c2c10c1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4ee9f93c50705bd1aafe9fe1affe666e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3dc984c542d772b6a77e6bf6369d7561 = $(`<div id="html_3dc984c542d772b6a77e6bf6369d7561" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 59<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $97.85<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 24 meses     </div>     </div>`)[0];
+                popup_4ee9f93c50705bd1aafe9fe1affe666e.setContent(html_3dc984c542d772b6a77e6bf6369d7561);
+            
+        
+
+        marker_1a5bda17637683909f220baa9c8839e6.bindPopup(popup_4ee9f93c50705bd1aafe9fe1affe666e)
+        ;
+
+        
+    
+    
+                marker_1a5bda17637683909f220baa9c8839e6.setIcon(icon_890d8ba4cf9e197f62750e2a5c2c10c1);
+            
+    
+            var marker_c942c9ff6b79bf9d193c7ae25944dc18 = L.marker(
+                [36.859410833150925, -119.74355803431489],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_bfcda31a750f9efd8c9b824d38832ea7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_50ffe1f87d94e29eaa76d517879c7866 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_0a6f588acb769f87f42ef8682ca07894 = $(`<div id="html_0a6f588acb769f87f42ef8682ca07894" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 10<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $65.57<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 71 meses     </div>     </div>`)[0];
+                popup_50ffe1f87d94e29eaa76d517879c7866.setContent(html_0a6f588acb769f87f42ef8682ca07894);
+            
+        
+
+        marker_c942c9ff6b79bf9d193c7ae25944dc18.bindPopup(popup_50ffe1f87d94e29eaa76d517879c7866)
+        ;
+
+        
+    
+    
+                marker_c942c9ff6b79bf9d193c7ae25944dc18.setIcon(icon_bfcda31a750f9efd8c9b824d38832ea7);
+            
+    
+            var marker_a4e9b379e8e0c9b45faaa3e392c00fc1 = L.marker(
+                [34.0058037355388, -118.33284983705393],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_2f420745af9245d33cb3e30cf946be63 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f0e72f211382dc8dd130b19662b90396 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_eeada90a1d27943cd30184e7fc42359d = $(`<div id="html_eeada90a1d27943cd30184e7fc42359d" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 90<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $74.33<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 60 meses     </div>     </div>`)[0];
+                popup_f0e72f211382dc8dd130b19662b90396.setContent(html_eeada90a1d27943cd30184e7fc42359d);
+            
+        
+
+        marker_a4e9b379e8e0c9b45faaa3e392c00fc1.bindPopup(popup_f0e72f211382dc8dd130b19662b90396)
+        ;
+
+        
+    
+    
+                marker_a4e9b379e8e0c9b45faaa3e392c00fc1.setIcon(icon_2f420745af9245d33cb3e30cf946be63);
+            
+    
+            var marker_896408c7ecc1faf0057b2ce2e6fabc15 = L.marker(
+                [33.92570150749621, -118.30145424664997],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_f553ef509ab8d2e9ac2094514f1b0a92 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_05c7b56dc69eb8b08ec84e6425e4dd81 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_da86d9e6fad36fe9ce1b54ccc9cdfeff = $(`<div id="html_da86d9e6fad36fe9ce1b54ccc9cdfeff" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 67<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $50.89<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 21 meses     </div>     </div>`)[0];
+                popup_05c7b56dc69eb8b08ec84e6425e4dd81.setContent(html_da86d9e6fad36fe9ce1b54ccc9cdfeff);
+            
+        
+
+        marker_896408c7ecc1faf0057b2ce2e6fabc15.bindPopup(popup_05c7b56dc69eb8b08ec84e6425e4dd81)
+        ;
+
+        
+    
+    
+                marker_896408c7ecc1faf0057b2ce2e6fabc15.setIcon(icon_f553ef509ab8d2e9ac2094514f1b0a92);
+            
+    
+            var marker_46d7ebddba3438ab978779ceeb9fb761 = L.marker(
+                [36.957546360749944, -119.78554492079355],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_805292f641789661542994988ca27cde = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8d5dcb5d4efbf70b968eed2439dcf17a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4d34ba93ab0b9cdc33a13a2eee433252 = $(`<div id="html_4d34ba93ab0b9cdc33a13a2eee433252" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 43<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $59.15<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 37 meses     </div>     </div>`)[0];
+                popup_8d5dcb5d4efbf70b968eed2439dcf17a.setContent(html_4d34ba93ab0b9cdc33a13a2eee433252);
+            
+        
+
+        marker_46d7ebddba3438ab978779ceeb9fb761.bindPopup(popup_8d5dcb5d4efbf70b968eed2439dcf17a)
+        ;
+
+        
+    
+    
+                marker_46d7ebddba3438ab978779ceeb9fb761.setIcon(icon_805292f641789661542994988ca27cde);
+            
+    
+            var marker_4be70368ffc3fb86386e100c053cc473 = L.marker(
+                [37.84140220058989, -122.39991509302578],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_52c46c1e1580a84b234f7735abe467d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_15c7abb397a1210cf4c4df95489d59b5 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3ae6f19493a9bc209154ec7a7c00a027 = $(`<div id="html_3ae6f19493a9bc209154ec7a7c00a027" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 12<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $63.53<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 55 meses     </div>     </div>`)[0];
+                popup_15c7abb397a1210cf4c4df95489d59b5.setContent(html_3ae6f19493a9bc209154ec7a7c00a027);
+            
+        
+
+        marker_4be70368ffc3fb86386e100c053cc473.bindPopup(popup_15c7abb397a1210cf4c4df95489d59b5)
+        ;
+
+        
+    
+    
+                marker_4be70368ffc3fb86386e100c053cc473.setIcon(icon_52c46c1e1580a84b234f7735abe467d4);
+            
+    
+            var marker_6f2ad9be9cee4863421d4c914a5cb397 = L.marker(
+                [32.80702519059526, -117.33527048609629],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_161441b8d41eb8b16dc1c57d6f0731d0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_38c53e56fedb713c413ff67ccd69454b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c767842b52a8066665a74246d6554e69 = $(`<div id="html_c767842b52a8066665a74246d6554e69" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 55<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $92.46<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 9 meses     </div>     </div>`)[0];
+                popup_38c53e56fedb713c413ff67ccd69454b.setContent(html_c767842b52a8066665a74246d6554e69);
+            
+        
+
+        marker_6f2ad9be9cee4863421d4c914a5cb397.bindPopup(popup_38c53e56fedb713c413ff67ccd69454b)
+        ;
+
+        
+    
+    
+                marker_6f2ad9be9cee4863421d4c914a5cb397.setIcon(icon_161441b8d41eb8b16dc1c57d6f0731d0);
+            
+    
+            var marker_77f41f13bcc96985fa65ac2cee588884 = L.marker(
+                [37.89751296150836, -122.46221094009105],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_254ddf923b87217cafd83412ff08721b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_11703153015df7d6552c446b23aa0a6b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c791e84089609edbeb5874a49d69225b = $(`<div id="html_c791e84089609edbeb5874a49d69225b" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 24<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $109.49<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 4 meses     </div>     </div>`)[0];
+                popup_11703153015df7d6552c446b23aa0a6b.setContent(html_c791e84089609edbeb5874a49d69225b);
+            
+        
+
+        marker_77f41f13bcc96985fa65ac2cee588884.bindPopup(popup_11703153015df7d6552c446b23aa0a6b)
+        ;
+
+        
+    
+    
+                marker_77f41f13bcc96985fa65ac2cee588884.setIcon(icon_254ddf923b87217cafd83412ff08721b);
+            
+    
+            var marker_33d610c5585330fc3d1a8e465a8c76cf = L.marker(
+                [37.91940678589497, -122.32518375296058],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_7ea408b487dbad5390e8e1ea096d31c4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_72d7809c7cf0f0e5fa25e8e421e69df8 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_6d0bd096dfe027d23e43596394f4eb38 = $(`<div id="html_6d0bd096dfe027d23e43596394f4eb38" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 40<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $65.58<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 2 meses     </div>     </div>`)[0];
+                popup_72d7809c7cf0f0e5fa25e8e421e69df8.setContent(html_6d0bd096dfe027d23e43596394f4eb38);
+            
+        
+
+        marker_33d610c5585330fc3d1a8e465a8c76cf.bindPopup(popup_72d7809c7cf0f0e5fa25e8e421e69df8)
+        ;
+
+        
+    
+    
+                marker_33d610c5585330fc3d1a8e465a8c76cf.setIcon(icon_7ea408b487dbad5390e8e1ea096d31c4);
+            
+    
+            var marker_14f182cfd5e801e2a587921f1df8b5f5 = L.marker(
+                [32.79869515396112, -117.32026581565005],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_2fb29ad3e1e29bc70887fcaa7f57359c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_78e4685ef254a283aa1e3f0e76d75177 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_63fce553bfc56b5de71c645d8d6b6eb4 = $(`<div id="html_63fce553bfc56b5de71c645d8d6b6eb4" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 51<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $104.46<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 40 meses     </div>     </div>`)[0];
+                popup_78e4685ef254a283aa1e3f0e76d75177.setContent(html_63fce553bfc56b5de71c645d8d6b6eb4);
+            
+        
+
+        marker_14f182cfd5e801e2a587921f1df8b5f5.bindPopup(popup_78e4685ef254a283aa1e3f0e76d75177)
+        ;
+
+        
+    
+    
+                marker_14f182cfd5e801e2a587921f1df8b5f5.setIcon(icon_2fb29ad3e1e29bc70887fcaa7f57359c);
+            
+    
+            var marker_e98cff05d7957f71180a94d57e2654d1 = L.marker(
+                [32.674074408129606, -117.12237792817929],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_5bff58f199e3159b63a151b33cbf939d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9f290d035d65eab5a963bd5620d7a912 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b785d841f063ea9b7dec7019430e1878 = $(`<div id="html_b785d841f063ea9b7dec7019430e1878" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 25<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $96.27<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 66 meses     </div>     </div>`)[0];
+                popup_9f290d035d65eab5a963bd5620d7a912.setContent(html_b785d841f063ea9b7dec7019430e1878);
+            
+        
+
+        marker_e98cff05d7957f71180a94d57e2654d1.bindPopup(popup_9f290d035d65eab5a963bd5620d7a912)
+        ;
+
+        
+    
+    
+                marker_e98cff05d7957f71180a94d57e2654d1.setIcon(icon_5bff58f199e3159b63a151b33cbf939d);
+            
+    
+            var marker_057a9950bd6968dfa6e04f2d72e8fb03 = L.marker(
+                [37.79558567118585, -122.51589890306401],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_6ef3f11fdb59464258a76325638383b7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b1d7e6d63a99ac2fdf6b18fce803ab23 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9a5bafa744b8e1a580cce02a92bcaf19 = $(`<div id="html_9a5bafa744b8e1a580cce02a92bcaf19" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 60<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $72.45<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 54 meses     </div>     </div>`)[0];
+                popup_b1d7e6d63a99ac2fdf6b18fce803ab23.setContent(html_9a5bafa744b8e1a580cce02a92bcaf19);
+            
+        
+
+        marker_057a9950bd6968dfa6e04f2d72e8fb03.bindPopup(popup_b1d7e6d63a99ac2fdf6b18fce803ab23)
+        ;
+
+        
+    
+    
+                marker_057a9950bd6968dfa6e04f2d72e8fb03.setIcon(icon_6ef3f11fdb59464258a76325638383b7);
+            
+    
+            var marker_7b3d4d8ab2b70f8e3cd8756a3be42cb9 = L.marker(
+                [34.05469533855728, -118.32158788327183],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_0fb259bf2281361a1ec2b1cbc4221ae5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e23fa9576c424a8f8097256e7806aeab = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_63a845ea5fb955a86e2df794a0e704e9 = $(`<div id="html_63a845ea5fb955a86e2df794a0e704e9" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 38<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $66.29<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 39 meses     </div>     </div>`)[0];
+                popup_e23fa9576c424a8f8097256e7806aeab.setContent(html_63a845ea5fb955a86e2df794a0e704e9);
+            
+        
+
+        marker_7b3d4d8ab2b70f8e3cd8756a3be42cb9.bindPopup(popup_e23fa9576c424a8f8097256e7806aeab)
+        ;
+
+        
+    
+    
+                marker_7b3d4d8ab2b70f8e3cd8756a3be42cb9.setIcon(icon_0fb259bf2281361a1ec2b1cbc4221ae5);
+            
+    
+            var marker_8169302ac93086dd711d495d35cac069 = L.marker(
+                [36.65292680556164, -119.69006593754855],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_73f2a00b404f74ec2d5a20a3e01f53fb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bb6e6375296fc4fbc39296e4912e97b3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c85883400954bb73e1ac6d7955cf6414 = $(`<div id="html_c85883400954bb73e1ac6d7955cf6414" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 68<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $95.95<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 24 meses     </div>     </div>`)[0];
+                popup_bb6e6375296fc4fbc39296e4912e97b3.setContent(html_c85883400954bb73e1ac6d7955cf6414);
+            
+        
+
+        marker_8169302ac93086dd711d495d35cac069.bindPopup(popup_bb6e6375296fc4fbc39296e4912e97b3)
+        ;
+
+        
+    
+    
+                marker_8169302ac93086dd711d495d35cac069.setIcon(icon_73f2a00b404f74ec2d5a20a3e01f53fb);
+            
+    
+            var marker_a86fd9b2ef7b9b346ff64342cf8c3706 = L.marker(
+                [32.78714876989145, -117.11528354295335],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_3102f89e41a8e5732252031ce12b8b84 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0308641592941f64763953c173489b17 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c4af55a39d1cae137038f14f5a173e75 = $(`<div id="html_c4af55a39d1cae137038f14f5a173e75" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 96<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $95.83<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 62 meses     </div>     </div>`)[0];
+                popup_0308641592941f64763953c173489b17.setContent(html_c4af55a39d1cae137038f14f5a173e75);
+            
+        
+
+        marker_a86fd9b2ef7b9b346ff64342cf8c3706.bindPopup(popup_0308641592941f64763953c173489b17)
+        ;
+
+        
+    
+    
+                marker_a86fd9b2ef7b9b346ff64342cf8c3706.setIcon(icon_3102f89e41a8e5732252031ce12b8b84);
+            
+    
+            var marker_d74d925393b629d59734dc6481662f17 = L.marker(
+                [37.821245122314416, -122.36489007354116],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_e43afdf54e62b5f70e4092b0b4583da6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0db5d647be0e4375ccfe78db0396df3c = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b5a7692df9b9ddc98bd879a81b89ed1e = $(`<div id="html_b5a7692df9b9ddc98bd879a81b89ed1e" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 92<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $117.28<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 40 meses     </div>     </div>`)[0];
+                popup_0db5d647be0e4375ccfe78db0396df3c.setContent(html_b5a7692df9b9ddc98bd879a81b89ed1e);
+            
+        
+
+        marker_d74d925393b629d59734dc6481662f17.bindPopup(popup_0db5d647be0e4375ccfe78db0396df3c)
+        ;
+
+        
+    
+    
+                marker_d74d925393b629d59734dc6481662f17.setIcon(icon_e43afdf54e62b5f70e4092b0b4583da6);
+            
+    
+            var marker_1a2574e79beb6074546f99bafbeb46cb = L.marker(
+                [37.667143132262524, -122.36499158408343],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_6d07b08a95c3a6dc9414f32476732f2f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c22b77b545f2f75776f792d75cc56ef1 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_fdb83ebaf19f250f6f314ff669584400 = $(`<div id="html_fdb83ebaf19f250f6f314ff669584400" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 54<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $52.88<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 65 meses     </div>     </div>`)[0];
+                popup_c22b77b545f2f75776f792d75cc56ef1.setContent(html_fdb83ebaf19f250f6f314ff669584400);
+            
+        
+
+        marker_1a2574e79beb6074546f99bafbeb46cb.bindPopup(popup_c22b77b545f2f75776f792d75cc56ef1)
+        ;
+
+        
+    
+    
+                marker_1a2574e79beb6074546f99bafbeb46cb.setIcon(icon_6d07b08a95c3a6dc9414f32476732f2f);
+            
+    
+            var marker_3698ca249f5c69e3318f164aa56a4002 = L.marker(
+                [38.573907297976355, -121.58276367711453],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_b70d355384d8f974bb28de6ac9b7b74b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dcdeae6fe254ecccc8540a0c71d359c8 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_47eddc925c8a33dadfea8ee88e6c3b01 = $(`<div id="html_47eddc925c8a33dadfea8ee88e6c3b01" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 65<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $96.24<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 46 meses     </div>     </div>`)[0];
+                popup_dcdeae6fe254ecccc8540a0c71d359c8.setContent(html_47eddc925c8a33dadfea8ee88e6c3b01);
+            
+        
+
+        marker_3698ca249f5c69e3318f164aa56a4002.bindPopup(popup_dcdeae6fe254ecccc8540a0c71d359c8)
+        ;
+
+        
+    
+    
+                marker_3698ca249f5c69e3318f164aa56a4002.setIcon(icon_b70d355384d8f974bb28de6ac9b7b74b);
+            
+    
+            var marker_e0eaf5bba9bd47b06025aa0897cd6437 = L.marker(
+                [36.73665593983254, -119.80464378351633],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_3b6d201143b7ea0a445efa6517640980 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_962e6badf65cb7cb856f656d01a33141 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5a08863ffdc22b1ab760ebaecacda080 = $(`<div id="html_5a08863ffdc22b1ab760ebaecacda080" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 41<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $53.81<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 71 meses     </div>     </div>`)[0];
+                popup_962e6badf65cb7cb856f656d01a33141.setContent(html_5a08863ffdc22b1ab760ebaecacda080);
+            
+        
+
+        marker_e0eaf5bba9bd47b06025aa0897cd6437.bindPopup(popup_962e6badf65cb7cb856f656d01a33141)
+        ;
+
+        
+    
+    
+                marker_e0eaf5bba9bd47b06025aa0897cd6437.setIcon(icon_3b6d201143b7ea0a445efa6517640980);
+            
+    
+            var marker_897d5620d68d30c306dfa8b804327d7b = L.marker(
+                [37.74123673182122, -122.47816695831857],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_690e59456f895a37c7cb14270479be8b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9c5b90f14e07adb93da8df83e52b74bf = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_da6bbc675846991b1c944a30537f55a9 = $(`<div id="html_da6bbc675846991b1c944a30537f55a9" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 35<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $112.28<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 56 meses     </div>     </div>`)[0];
+                popup_9c5b90f14e07adb93da8df83e52b74bf.setContent(html_da6bbc675846991b1c944a30537f55a9);
+            
+        
+
+        marker_897d5620d68d30c306dfa8b804327d7b.bindPopup(popup_9c5b90f14e07adb93da8df83e52b74bf)
+        ;
+
+        
+    
+    
+                marker_897d5620d68d30c306dfa8b804327d7b.setIcon(icon_690e59456f895a37c7cb14270479be8b);
+            
+    
+            var marker_c13157b99e3afd961ea31f12c61d5e97 = L.marker(
+                [36.63741310805855, -119.70921754404345],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_619dbf588415aa7b4cbe86af534e9545 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fe7c521c57383fa0221329bc086df285 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b73326f14cc6d256fb945f0801135635 = $(`<div id="html_b73326f14cc6d256fb945f0801135635" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 27<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $84.65<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 71 meses     </div>     </div>`)[0];
+                popup_fe7c521c57383fa0221329bc086df285.setContent(html_b73326f14cc6d256fb945f0801135635);
+            
+        
+
+        marker_c13157b99e3afd961ea31f12c61d5e97.bindPopup(popup_fe7c521c57383fa0221329bc086df285)
+        ;
+
+        
+    
+    
+                marker_c13157b99e3afd961ea31f12c61d5e97.setIcon(icon_619dbf588415aa7b4cbe86af534e9545);
+            
+    
+            var marker_830d9ccc35aebe4ee671dca58f3fedf7 = L.marker(
+                [32.63974013049579, -116.94775641451882],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_bc3671f63050a0ce56329a0ab7861a0d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_92667a2eeec09358430bb1158fee8c53 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_395cf4ffe607a250e8a9f93b3eab3148 = $(`<div id="html_395cf4ffe607a250e8a9f93b3eab3148" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 70<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $98.25<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 9 meses     </div>     </div>`)[0];
+                popup_92667a2eeec09358430bb1158fee8c53.setContent(html_395cf4ffe607a250e8a9f93b3eab3148);
+            
+        
+
+        marker_830d9ccc35aebe4ee671dca58f3fedf7.bindPopup(popup_92667a2eeec09358430bb1158fee8c53)
+        ;
+
+        
+    
+    
+                marker_830d9ccc35aebe4ee671dca58f3fedf7.setIcon(icon_bc3671f63050a0ce56329a0ab7861a0d);
+            
+    
+            var marker_8096793ca3529e16c17552ffbca88864 = L.marker(
+                [34.13065908622615, -118.32023152962769],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_9522bfbbb070e5e5c2da4195569a5464 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_51c5e3d929b67a1656a6ddbfb3bb29a9 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_52f30b09710e42c55d94160e21b65a92 = $(`<div id="html_52f30b09710e42c55d94160e21b65a92" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 58<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $74.88<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 8 meses     </div>     </div>`)[0];
+                popup_51c5e3d929b67a1656a6ddbfb3bb29a9.setContent(html_52f30b09710e42c55d94160e21b65a92);
+            
+        
+
+        marker_8096793ca3529e16c17552ffbca88864.bindPopup(popup_51c5e3d929b67a1656a6ddbfb3bb29a9)
+        ;
+
+        
+    
+    
+                marker_8096793ca3529e16c17552ffbca88864.setIcon(icon_9522bfbbb070e5e5c2da4195569a5464);
+            
+    
+            var marker_cb072dc9d180e1b45b55573fbd96095c = L.marker(
+                [37.833897344157485, -122.39501717130186],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_9765e9df40041b6f1d6b06b9d15de93d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5c2ac60a8816b0148cc7d641612d1242 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_8058ff59fa430630ef7884029d8edec3 = $(`<div id="html_8058ff59fa430630ef7884029d8edec3" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 8<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $60.85<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 35 meses     </div>     </div>`)[0];
+                popup_5c2ac60a8816b0148cc7d641612d1242.setContent(html_8058ff59fa430630ef7884029d8edec3);
+            
+        
+
+        marker_cb072dc9d180e1b45b55573fbd96095c.bindPopup(popup_5c2ac60a8816b0148cc7d641612d1242)
+        ;
+
+        
+    
+    
+                marker_cb072dc9d180e1b45b55573fbd96095c.setIcon(icon_9765e9df40041b6f1d6b06b9d15de93d);
+            
+    
+            var marker_ed9c21641cfbf8576cca4a5cc5940430 = L.marker(
+                [37.780970683198795, -122.4580291277183],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_68e2c33e35d5ca7eee6102d3c8560254 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_060965887635ef9300ad58731fb1f43a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_430fe1e109bd3e5d38d23f1b5058140a = $(`<div id="html_430fe1e109bd3e5d38d23f1b5058140a" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 29<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $75.19<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 59 meses     </div>     </div>`)[0];
+                popup_060965887635ef9300ad58731fb1f43a.setContent(html_430fe1e109bd3e5d38d23f1b5058140a);
+            
+        
+
+        marker_ed9c21641cfbf8576cca4a5cc5940430.bindPopup(popup_060965887635ef9300ad58731fb1f43a)
+        ;
+
+        
+    
+    
+                marker_ed9c21641cfbf8576cca4a5cc5940430.setIcon(icon_68e2c33e35d5ca7eee6102d3c8560254);
+            
+    
+            var marker_bdc5c26a3ccfb48f582d6d048ded326a = L.marker(
+                [37.8657292448022, -122.34226893726644],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_b125c3da39c18763dd55114ca6fc664f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_efc9f30cc58e2316577fc8b049dfa151 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_201bd1159dca0eb3cafcaf4e47cd7846 = $(`<div id="html_201bd1159dca0eb3cafcaf4e47cd7846" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 85<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $67.61<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 6 meses     </div>     </div>`)[0];
+                popup_efc9f30cc58e2316577fc8b049dfa151.setContent(html_201bd1159dca0eb3cafcaf4e47cd7846);
+            
+        
+
+        marker_bdc5c26a3ccfb48f582d6d048ded326a.bindPopup(popup_efc9f30cc58e2316577fc8b049dfa151)
+        ;
+
+        
+    
+    
+                marker_bdc5c26a3ccfb48f582d6d048ded326a.setIcon(icon_b125c3da39c18763dd55114ca6fc664f);
+            
+    
+            var marker_7da4f6cf5d82bb3e024cb9708d24d8f9 = L.marker(
+                [36.922595044450816, -119.98319916070375],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_6b91f3fb240e689c26b5050042881a73 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_71dc61b2d584c6e3f1c296a5fafbb0e8 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e4f5d83a93a5e61aa3c90df3027686ed = $(`<div id="html_e4f5d83a93a5e61aa3c90df3027686ed" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 64<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $50.26<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 38 meses     </div>     </div>`)[0];
+                popup_71dc61b2d584c6e3f1c296a5fafbb0e8.setContent(html_e4f5d83a93a5e61aa3c90df3027686ed);
+            
+        
+
+        marker_7da4f6cf5d82bb3e024cb9708d24d8f9.bindPopup(popup_71dc61b2d584c6e3f1c296a5fafbb0e8)
+        ;
+
+        
+    
+    
+                marker_7da4f6cf5d82bb3e024cb9708d24d8f9.setIcon(icon_6b91f3fb240e689c26b5050042881a73);
+            
+    
+            var marker_28ec4f6a12c6ba991666dc319c386a5d = L.marker(
+                [34.10631503891248, -118.27913686857033],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_d41bea7632d74878d9e458cc9e47def1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4ad7aef2cb2149a4cd140e4aa4f0eec2 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b7b8b34b0a27f3dc33eb9fcd5bcc20d9 = $(`<div id="html_b7b8b34b0a27f3dc33eb9fcd5bcc20d9" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 4<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $75.09<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 26 meses     </div>     </div>`)[0];
+                popup_4ad7aef2cb2149a4cd140e4aa4f0eec2.setContent(html_b7b8b34b0a27f3dc33eb9fcd5bcc20d9);
+            
+        
+
+        marker_28ec4f6a12c6ba991666dc319c386a5d.bindPopup(popup_4ad7aef2cb2149a4cd140e4aa4f0eec2)
+        ;
+
+        
+    
+    
+                marker_28ec4f6a12c6ba991666dc319c386a5d.setIcon(icon_d41bea7632d74878d9e458cc9e47def1);
+            
+    
+            var marker_293aebffbfb71167585f581056a8e56e = L.marker(
+                [37.81496664445503, -122.38384711190875],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_03091ed7fcc7526dd34118d51760f598 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9c59d5dd8c9194122bd8666583defdc7 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_65c362105cd218a12c113838ef914acb = $(`<div id="html_65c362105cd218a12c113838ef914acb" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 17<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $82.36<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 59 meses     </div>     </div>`)[0];
+                popup_9c59d5dd8c9194122bd8666583defdc7.setContent(html_65c362105cd218a12c113838ef914acb);
+            
+        
+
+        marker_293aebffbfb71167585f581056a8e56e.bindPopup(popup_9c59d5dd8c9194122bd8666583defdc7)
+        ;
+
+        
+    
+    
+                marker_293aebffbfb71167585f581056a8e56e.setIcon(icon_03091ed7fcc7526dd34118d51760f598);
+            
+    
+            var marker_e626014221c9f56d8b41838788b69086 = L.marker(
+                [34.03558014688957, -118.19962170600931],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_c915b418a98078282cfbc2162b7c2a6f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_882f18d1e175946e06bece1a3b123e6e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_7389d83bfc06b7da98c236caecf30357 = $(`<div id="html_7389d83bfc06b7da98c236caecf30357" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 91<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $94.11<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 9 meses     </div>     </div>`)[0];
+                popup_882f18d1e175946e06bece1a3b123e6e.setContent(html_7389d83bfc06b7da98c236caecf30357);
+            
+        
+
+        marker_e626014221c9f56d8b41838788b69086.bindPopup(popup_882f18d1e175946e06bece1a3b123e6e)
+        ;
+
+        
+    
+    
+                marker_e626014221c9f56d8b41838788b69086.setIcon(icon_c915b418a98078282cfbc2162b7c2a6f);
+            
+    
+            var marker_8ceda4d1b1511a9766abcfd2f4c94937 = L.marker(
+                [36.70830491154607, -119.86609263789664],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_64598e92baaa2219dd25172250528f0a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ceaa14c35151d1ae8231639fdef18334 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5dcc90d9c2e43bfe784b9c057eef5155 = $(`<div id="html_5dcc90d9c2e43bfe784b9c057eef5155" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 80<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $89.64<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 34 meses     </div>     </div>`)[0];
+                popup_ceaa14c35151d1ae8231639fdef18334.setContent(html_5dcc90d9c2e43bfe784b9c057eef5155);
+            
+        
+
+        marker_8ceda4d1b1511a9766abcfd2f4c94937.bindPopup(popup_ceaa14c35151d1ae8231639fdef18334)
+        ;
+
+        
+    
+    
+                marker_8ceda4d1b1511a9766abcfd2f4c94937.setIcon(icon_64598e92baaa2219dd25172250528f0a);
+            
+    
+            var marker_d08b9b753d3b495c10a022a147cbe851 = L.marker(
+                [38.55003900762889, -121.62019092108702],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_da3656660f5a9b2d14942bf7848fdf2a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f73aaee70de4a570913b2b3783c86bba = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f0952e0b866de2a45279ee315a8ad6c5 = $(`<div id="html_f0952e0b866de2a45279ee315a8ad6c5" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 33<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $116.90<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 63 meses     </div>     </div>`)[0];
+                popup_f73aaee70de4a570913b2b3783c86bba.setContent(html_f0952e0b866de2a45279ee315a8ad6c5);
+            
+        
+
+        marker_d08b9b753d3b495c10a022a147cbe851.bindPopup(popup_f73aaee70de4a570913b2b3783c86bba)
+        ;
+
+        
+    
+    
+                marker_d08b9b753d3b495c10a022a147cbe851.setIcon(icon_da3656660f5a9b2d14942bf7848fdf2a);
+            
+    
+            var marker_acfda1686f2d2c0df5b80150f7d37b11 = L.marker(
+                [37.80878591320478, -122.4795803562977],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_2934e480d40623265b5bab1273c8b139 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ac0aee7ae6995fb89e6c48b184b9344d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_86a7e146997cb851de095ab360675b5e = $(`<div id="html_86a7e146997cb851de095ab360675b5e" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 39<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $85.08<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 33 meses     </div>     </div>`)[0];
+                popup_ac0aee7ae6995fb89e6c48b184b9344d.setContent(html_86a7e146997cb851de095ab360675b5e);
+            
+        
+
+        marker_acfda1686f2d2c0df5b80150f7d37b11.bindPopup(popup_ac0aee7ae6995fb89e6c48b184b9344d)
+        ;
+
+        
+    
+    
+                marker_acfda1686f2d2c0df5b80150f7d37b11.setIcon(icon_2934e480d40623265b5bab1273c8b139);
+            
+    
+            var marker_1395a1f8acdd91e2b794e11ae143df12 = L.marker(
+                [33.91718088018789, -118.19151774632533],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_52f98074df0dd22c1af3cd425b4f2b0a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_01911a94ecde3470f2d86b99baf521f8 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_6acd9e86f7485c46e124a24020ca13ac = $(`<div id="html_6acd9e86f7485c46e124a24020ca13ac" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 49<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $82.58<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 71 meses     </div>     </div>`)[0];
+                popup_01911a94ecde3470f2d86b99baf521f8.setContent(html_6acd9e86f7485c46e124a24020ca13ac);
+            
+        
+
+        marker_1395a1f8acdd91e2b794e11ae143df12.bindPopup(popup_01911a94ecde3470f2d86b99baf521f8)
+        ;
+
+        
+    
+    
+                marker_1395a1f8acdd91e2b794e11ae143df12.setIcon(icon_52f98074df0dd22c1af3cd425b4f2b0a);
+            
+    
+            var marker_3fa4e2c792e8a7dc4ee502dc64c72985 = L.marker(
+                [38.683292474360236, -121.54791813998361],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_648997dcdbef6759554eaf8651a004c0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f608d304f75ee0ec3c9b034adbbf57b7 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_230690785cff0738ea3cbbfcf4414416 = $(`<div id="html_230690785cff0738ea3cbbfcf4414416" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 63<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $99.17<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 15 meses     </div>     </div>`)[0];
+                popup_f608d304f75ee0ec3c9b034adbbf57b7.setContent(html_230690785cff0738ea3cbbfcf4414416);
+            
+        
+
+        marker_3fa4e2c792e8a7dc4ee502dc64c72985.bindPopup(popup_f608d304f75ee0ec3c9b034adbbf57b7)
+        ;
+
+        
+    
+    
+                marker_3fa4e2c792e8a7dc4ee502dc64c72985.setIcon(icon_648997dcdbef6759554eaf8651a004c0);
+            
+    
+            var marker_37ff9857e6656c2c710757dc553207de = L.marker(
+                [38.647984987644975, -121.44418052674357],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_57e1f26ec4fe7caf290e110ec85b4d9d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_087a6b41d84596af2cba701c07d102b3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b019beeb3757588bbe6b35ba8046d765 = $(`<div id="html_b019beeb3757588bbe6b35ba8046d765" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 62<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $99.46<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 2 meses     </div>     </div>`)[0];
+                popup_087a6b41d84596af2cba701c07d102b3.setContent(html_b019beeb3757588bbe6b35ba8046d765);
+            
+        
+
+        marker_37ff9857e6656c2c710757dc553207de.bindPopup(popup_087a6b41d84596af2cba701c07d102b3)
+        ;
+
+        
+    
+    
+                marker_37ff9857e6656c2c710757dc553207de.setIcon(icon_57e1f26ec4fe7caf290e110ec85b4d9d);
+            
+    
+            var marker_80b5d97dbf47527f1a718e6d7498ef49 = L.marker(
+                [36.68463360104632, -119.70550375368522],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_44f17db74c05aae0f34bd6bfa9f21212 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_beff376739532f129ab64cfadd5ca475 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_742ea6ba9dd330237d302224fd23bcc6 = $(`<div id="html_742ea6ba9dd330237d302224fd23bcc6" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 56<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $77.51<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 39 meses     </div>     </div>`)[0];
+                popup_beff376739532f129ab64cfadd5ca475.setContent(html_742ea6ba9dd330237d302224fd23bcc6);
+            
+        
+
+        marker_80b5d97dbf47527f1a718e6d7498ef49.bindPopup(popup_beff376739532f129ab64cfadd5ca475)
+        ;
+
+        
+    
+    
+                marker_80b5d97dbf47527f1a718e6d7498ef49.setIcon(icon_44f17db74c05aae0f34bd6bfa9f21212);
+            
+    
+            var marker_f8e5b751e6194293bb2c705e038b741d = L.marker(
+                [38.39055669429876, -121.493316990225],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_1d28f6621a28dcb65c3ded363e1ee4ae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bb08100ce2c00b2e407ef1279b7f75a2 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2c32160c8022137fdb786673a707bd1c = $(`<div id="html_2c32160c8022137fdb786673a707bd1c" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 45<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $63.50<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 19 meses     </div>     </div>`)[0];
+                popup_bb08100ce2c00b2e407ef1279b7f75a2.setContent(html_2c32160c8022137fdb786673a707bd1c);
+            
+        
+
+        marker_f8e5b751e6194293bb2c705e038b741d.bindPopup(popup_bb08100ce2c00b2e407ef1279b7f75a2)
+        ;
+
+        
+    
+    
+                marker_f8e5b751e6194293bb2c705e038b741d.setIcon(icon_1d28f6621a28dcb65c3ded363e1ee4ae);
+            
+    
+            var marker_f4badcb114768c41b6e84c3ee039a063 = L.marker(
+                [32.69611493297883, -117.17669113739605],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_c17a22eddc589288d4bfdaa193c45d78 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f276da0ab22b03139717d862d36ce8f4 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_1b763ed8d6aa258840f492c6ff785544 = $(`<div id="html_1b763ed8d6aa258840f492c6ff785544" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 98<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $88.31<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 57 meses     </div>     </div>`)[0];
+                popup_f276da0ab22b03139717d862d36ce8f4.setContent(html_1b763ed8d6aa258840f492c6ff785544);
+            
+        
+
+        marker_f4badcb114768c41b6e84c3ee039a063.bindPopup(popup_f276da0ab22b03139717d862d36ce8f4)
+        ;
+
+        
+    
+    
+                marker_f4badcb114768c41b6e84c3ee039a063.setIcon(icon_c17a22eddc589288d4bfdaa193c45d78);
+            
+    
+            var marker_9827e27e854928a2c99357894546d4d7 = L.marker(
+                [36.739039869518436, -119.87486266515046],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_7f3a5cb3099b8bd88d33511c0473b090 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0f4da9081af1c103ea2212012f3102ce = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_8d1820804fcc62378b7cb7ff244b3568 = $(`<div id="html_8d1820804fcc62378b7cb7ff244b3568" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 11<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $55.15<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 34 meses     </div>     </div>`)[0];
+                popup_0f4da9081af1c103ea2212012f3102ce.setContent(html_8d1820804fcc62378b7cb7ff244b3568);
+            
+        
+
+        marker_9827e27e854928a2c99357894546d4d7.bindPopup(popup_0f4da9081af1c103ea2212012f3102ce)
+        ;
+
+        
+    
+    
+                marker_9827e27e854928a2c99357894546d4d7.setIcon(icon_7f3a5cb3099b8bd88d33511c0473b090);
+            
+    
+            var marker_8d8f4378a0e4439eb8544fe8d06671a8 = L.marker(
+                [32.908204366718586, -116.9700917545931],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_d028b0f0192396700fad60177cdfef13 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6798e2f6219f61d2b2dd31fb399d94dc = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5281d497ecdae5b492442de9cab638f6 = $(`<div id="html_5281d497ecdae5b492442de9cab638f6" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 0<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $119.71<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 2 meses     </div>     </div>`)[0];
+                popup_6798e2f6219f61d2b2dd31fb399d94dc.setContent(html_5281d497ecdae5b492442de9cab638f6);
+            
+        
+
+        marker_8d8f4378a0e4439eb8544fe8d06671a8.bindPopup(popup_6798e2f6219f61d2b2dd31fb399d94dc)
+        ;
+
+        
+    
+    
+                marker_8d8f4378a0e4439eb8544fe8d06671a8.setIcon(icon_d028b0f0192396700fad60177cdfef13);
+            
+    
+            var marker_b76f5dffe69fc22445ffd53ea120ad63 = L.marker(
+                [36.58322098012439, -119.90827648709164],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_350bc4fec6ef81e8b2cfc2083ebee933 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_39e6f9a18b4d80c3314dd82b34ee1de6 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_010c8d876be430d1ea8ff1bafdee0fbf = $(`<div id="html_010c8d876be430d1ea8ff1bafdee0fbf" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 30<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $86.42<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 68 meses     </div>     </div>`)[0];
+                popup_39e6f9a18b4d80c3314dd82b34ee1de6.setContent(html_010c8d876be430d1ea8ff1bafdee0fbf);
+            
+        
+
+        marker_b76f5dffe69fc22445ffd53ea120ad63.bindPopup(popup_39e6f9a18b4d80c3314dd82b34ee1de6)
+        ;
+
+        
+    
+    
+                marker_b76f5dffe69fc22445ffd53ea120ad63.setIcon(icon_350bc4fec6ef81e8b2cfc2083ebee933);
+            
+    
+            var marker_6580cdcb8447b39d8dbe6790ec16a9bd = L.marker(
+                [38.46131439914985, -121.45134438463333],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_bd74a45e4964abf008e9fbeee1a01fb7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6d53bf1f67de45efd3225eb1e66288ae = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_38c0de75154b43759bb713c1cd9fed8b = $(`<div id="html_38c0de75154b43759bb713c1cd9fed8b" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 16<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $81.86<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 22 meses     </div>     </div>`)[0];
+                popup_6d53bf1f67de45efd3225eb1e66288ae.setContent(html_38c0de75154b43759bb713c1cd9fed8b);
+            
+        
+
+        marker_6580cdcb8447b39d8dbe6790ec16a9bd.bindPopup(popup_6d53bf1f67de45efd3225eb1e66288ae)
+        ;
+
+        
+    
+    
+                marker_6580cdcb8447b39d8dbe6790ec16a9bd.setIcon(icon_bd74a45e4964abf008e9fbeee1a01fb7);
+            
+    
+            var marker_5e1ea317408b0dfcc89d4cf54350d103 = L.marker(
+                [32.58493709641989, -117.23488442089518],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_58e6ead27782d80843faa4e86ff010ee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_898b8dedc9c09046da587442ca8a533e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_62a581d09950b35334f9cbc115522ac4 = $(`<div id="html_62a581d09950b35334f9cbc115522ac4" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 44<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $108.86<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 31 meses     </div>     </div>`)[0];
+                popup_898b8dedc9c09046da587442ca8a533e.setContent(html_62a581d09950b35334f9cbc115522ac4);
+            
+        
+
+        marker_5e1ea317408b0dfcc89d4cf54350d103.bindPopup(popup_898b8dedc9c09046da587442ca8a533e)
+        ;
+
+        
+    
+    
+                marker_5e1ea317408b0dfcc89d4cf54350d103.setIcon(icon_58e6ead27782d80843faa4e86ff010ee);
+            
+    
+            var marker_bf76069b4ecc11d3258a1a726142968c = L.marker(
+                [37.797251315664965, -122.48613353584952],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_29a8ae44516d1eac7e80257740176c9f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ca2d44064b1ffd1ba818fe46740baac9 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e4681072ba237258130fb686c5513082 = $(`<div id="html_e4681072ba237258130fb686c5513082" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 20<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $95.11<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 22 meses     </div>     </div>`)[0];
+                popup_ca2d44064b1ffd1ba818fe46740baac9.setContent(html_e4681072ba237258130fb686c5513082);
+            
+        
+
+        marker_bf76069b4ecc11d3258a1a726142968c.bindPopup(popup_ca2d44064b1ffd1ba818fe46740baac9)
+        ;
+
+        
+    
+    
+                marker_bf76069b4ecc11d3258a1a726142968c.setIcon(icon_29a8ae44516d1eac7e80257740176c9f);
+            
+    
+            var marker_0bcfc72bd48c10f643b185045a30b587 = L.marker(
+                [37.63377592210514, -122.42586344415965],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_ddb7935fe327967263f3cc4f413daa1d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cdafd74fb8a5fde99ec557d6312a1d46 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b3c4a97802a6a7f3124079afa7f1b821 = $(`<div id="html_b3c4a97802a6a7f3124079afa7f1b821" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 53<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $76.31<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 52 meses     </div>     </div>`)[0];
+                popup_cdafd74fb8a5fde99ec557d6312a1d46.setContent(html_b3c4a97802a6a7f3124079afa7f1b821);
+            
+        
+
+        marker_0bcfc72bd48c10f643b185045a30b587.bindPopup(popup_cdafd74fb8a5fde99ec557d6312a1d46)
+        ;
+
+        
+    
+    
+                marker_0bcfc72bd48c10f643b185045a30b587.setIcon(icon_ddb7935fe327967263f3cc4f413daa1d);
+            
+    
+            var marker_c320117d031e3e8f4dbeee2565ea4382 = L.marker(
+                [38.52497381595589, -121.50872806338171],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_065e51f340dbfeeb0129f3680a9cce8b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2e9b66efb91c50dafce39d351eb41752 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_25c662d942bd35ad652aee3c962fc51a = $(`<div id="html_25c662d942bd35ad652aee3c962fc51a" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 74<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $92.18<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 5 meses     </div>     </div>`)[0];
+                popup_2e9b66efb91c50dafce39d351eb41752.setContent(html_25c662d942bd35ad652aee3c962fc51a);
+            
+        
+
+        marker_c320117d031e3e8f4dbeee2565ea4382.bindPopup(popup_2e9b66efb91c50dafce39d351eb41752)
+        ;
+
+        
+    
+    
+                marker_c320117d031e3e8f4dbeee2565ea4382.setIcon(icon_065e51f340dbfeeb0129f3680a9cce8b);
+            
+    
+            var marker_29d9b2b4c82c7129adf055b1c63a5b66 = L.marker(
+                [36.476467434835584, -119.75258997832287],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_cd79c92ffb80fcf1e413904cc729d1d7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e5277ccca748ba4f81a62d66aeb5c074 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b412b6414ca593be21484bcffed9cb27 = $(`<div id="html_b412b6414ca593be21484bcffed9cb27" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 47<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $68.56<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 36 meses     </div>     </div>`)[0];
+                popup_e5277ccca748ba4f81a62d66aeb5c074.setContent(html_b412b6414ca593be21484bcffed9cb27);
+            
+        
+
+        marker_29d9b2b4c82c7129adf055b1c63a5b66.bindPopup(popup_e5277ccca748ba4f81a62d66aeb5c074)
+        ;
+
+        
+    
+    
+                marker_29d9b2b4c82c7129adf055b1c63a5b66.setIcon(icon_cd79c92ffb80fcf1e413904cc729d1d7);
+            
+    
+            var marker_5f0f61e1b4711a417dca8667edb67636 = L.marker(
+                [34.23829613322751, -118.26434061837409],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_18f5e743317a6bf169da76fa1fe9075d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a604a48972d8710d3963728c040772dd = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_db10f4035f306904d9c61af4d798b300 = $(`<div id="html_db10f4035f306904d9c61af4d798b300" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 26<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $81.29<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 56 meses     </div>     </div>`)[0];
+                popup_a604a48972d8710d3963728c040772dd.setContent(html_db10f4035f306904d9c61af4d798b300);
+            
+        
+
+        marker_5f0f61e1b4711a417dca8667edb67636.bindPopup(popup_a604a48972d8710d3963728c040772dd)
+        ;
+
+        
+    
+    
+                marker_5f0f61e1b4711a417dca8667edb67636.setIcon(icon_18f5e743317a6bf169da76fa1fe9075d);
+            
+    
+            var marker_ae8b5be829636f3d57707705f7cb8852 = L.marker(
+                [34.052980918549856, -118.09245001037507],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_b6685384519a60354b2fb816dc4a1fe5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3460b2b2a8274b4abcf2d3cbb8d2bdf8 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2662d8b0e443507505ed67f900165f0a = $(`<div id="html_2662d8b0e443507505ed67f900165f0a" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 94<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $88.14<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 19 meses     </div>     </div>`)[0];
+                popup_3460b2b2a8274b4abcf2d3cbb8d2bdf8.setContent(html_2662d8b0e443507505ed67f900165f0a);
+            
+        
+
+        marker_ae8b5be829636f3d57707705f7cb8852.bindPopup(popup_3460b2b2a8274b4abcf2d3cbb8d2bdf8)
+        ;
+
+        
+    
+    
+                marker_ae8b5be829636f3d57707705f7cb8852.setIcon(icon_b6685384519a60354b2fb816dc4a1fe5);
+            
+    
+            var marker_927e3afa3870a2215357d028a571aea6 = L.marker(
+                [32.799062549612366, -117.03973221783077],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_e33cd016129215f7b3f757efbec003ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_076d893707c413da1043ba397618894a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_1a7ecf55e2a7ea74b782eaef5759239c = $(`<div id="html_1a7ecf55e2a7ea74b782eaef5759239c" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 86<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $119.31<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 19 meses     </div>     </div>`)[0];
+                popup_076d893707c413da1043ba397618894a.setContent(html_1a7ecf55e2a7ea74b782eaef5759239c);
+            
+        
+
+        marker_927e3afa3870a2215357d028a571aea6.bindPopup(popup_076d893707c413da1043ba397618894a)
+        ;
+
+        
+    
+    
+                marker_927e3afa3870a2215357d028a571aea6.setIcon(icon_e33cd016129215f7b3f757efbec003ab);
+            
+    
+            var marker_a61179c3d0df71bc3b633b3efb7611fd = L.marker(
+                [32.697177164853954, -117.12688360847335],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_6301a5093a5ea3479177c30db76a8724 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3197eb33717bdb3560c55938c75b586b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c218384c749323ffe86dffe169aed92f = $(`<div id="html_c218384c749323ffe86dffe169aed92f" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 36<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $78.20<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 8 meses     </div>     </div>`)[0];
+                popup_3197eb33717bdb3560c55938c75b586b.setContent(html_c218384c749323ffe86dffe169aed92f);
+            
+        
+
+        marker_a61179c3d0df71bc3b633b3efb7611fd.bindPopup(popup_3197eb33717bdb3560c55938c75b586b)
+        ;
+
+        
+    
+    
+                marker_a61179c3d0df71bc3b633b3efb7611fd.setIcon(icon_6301a5093a5ea3479177c30db76a8724);
+            
+    
+            var marker_8facd2379ca02a4972b1e700a73ebc5e = L.marker(
+                [38.53681655628822, -121.4759927916999],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_4641952343a823ee9e3bc70b5b6283b8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d0edf412039cf7d2f72ccb60d9a86221 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d3fe1dfbd1fa5c7a4187b0b228ad44ce = $(`<div id="html_d3fe1dfbd1fa5c7a4187b0b228ad44ce" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 23<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $110.42<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 46 meses     </div>     </div>`)[0];
+                popup_d0edf412039cf7d2f72ccb60d9a86221.setContent(html_d3fe1dfbd1fa5c7a4187b0b228ad44ce);
+            
+        
+
+        marker_8facd2379ca02a4972b1e700a73ebc5e.bindPopup(popup_d0edf412039cf7d2f72ccb60d9a86221)
+        ;
+
+        
+    
+    
+                marker_8facd2379ca02a4972b1e700a73ebc5e.setIcon(icon_4641952343a823ee9e3bc70b5b6283b8);
+            
+    
+            var marker_89dbeb8d1be664c5e58949ee6a049eb8 = L.marker(
+                [36.87640236265124, -119.62265305775358],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_bc79c25fe1c4ced05eb033ec2b4f04b1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_64b35f7ab292c57ffbc6fad6c03308a3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_05d7e9bc11e9b1b298b348439f5036e2 = $(`<div id="html_05d7e9bc11e9b1b298b348439f5036e2" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 50<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $85.82<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 34 meses     </div>     </div>`)[0];
+                popup_64b35f7ab292c57ffbc6fad6c03308a3.setContent(html_05d7e9bc11e9b1b298b348439f5036e2);
+            
+        
+
+        marker_89dbeb8d1be664c5e58949ee6a049eb8.bindPopup(popup_64b35f7ab292c57ffbc6fad6c03308a3)
+        ;
+
+        
+    
+    
+                marker_89dbeb8d1be664c5e58949ee6a049eb8.setIcon(icon_bc79c25fe1c4ced05eb033ec2b4f04b1);
+            
+    
+            var marker_cf96aa5642eec2174d4d247e4a0b028d = L.marker(
+                [38.65088558845404, -121.42131885595288],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_9aad5b1a1b9bfdb7a6c8b75e84c135c7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_64124cddb425740330ea11b4bc5441cc = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_cd0450580ac3f807609c3703fa28ad9a = $(`<div id="html_cd0450580ac3f807609c3703fa28ad9a" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 84<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $105.08<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 28 meses     </div>     </div>`)[0];
+                popup_64124cddb425740330ea11b4bc5441cc.setContent(html_cd0450580ac3f807609c3703fa28ad9a);
+            
+        
+
+        marker_cf96aa5642eec2174d4d247e4a0b028d.bindPopup(popup_64124cddb425740330ea11b4bc5441cc)
+        ;
+
+        
+    
+    
+                marker_cf96aa5642eec2174d4d247e4a0b028d.setIcon(icon_9aad5b1a1b9bfdb7a6c8b75e84c135c7);
+            
+    
+            var marker_8bcf1deac41e0d163fc46c3536789a13 = L.marker(
+                [38.7232611243762, -121.46310609880841],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_78f3a2c0a6db3e4bbc81de1679d6df14 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_feae57a4ba11415302d1140c99931c7e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_222a7a3bb8cecc0c96d4681e8aca7ea9 = $(`<div id="html_222a7a3bb8cecc0c96d4681e8aca7ea9" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 69<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $107.79<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 60 meses     </div>     </div>`)[0];
+                popup_feae57a4ba11415302d1140c99931c7e.setContent(html_222a7a3bb8cecc0c96d4681e8aca7ea9);
+            
+        
+
+        marker_8bcf1deac41e0d163fc46c3536789a13.bindPopup(popup_feae57a4ba11415302d1140c99931c7e)
+        ;
+
+        
+    
+    
+                marker_8bcf1deac41e0d163fc46c3536789a13.setIcon(icon_78f3a2c0a6db3e4bbc81de1679d6df14);
+            
+    
+            var marker_98f5e8762c6c0b9b784758a09ac1a0af = L.marker(
+                [32.84265482315888, -117.17802952911562],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_775eee94352d3a8e42047023be04bbf9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_19b037925dba1427223520a09fca33b5 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_28802f3817b0c168291eae69c1d4a47e = $(`<div id="html_28802f3817b0c168291eae69c1d4a47e" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 81<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $79.51<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 48 meses     </div>     </div>`)[0];
+                popup_19b037925dba1427223520a09fca33b5.setContent(html_28802f3817b0c168291eae69c1d4a47e);
+            
+        
+
+        marker_98f5e8762c6c0b9b784758a09ac1a0af.bindPopup(popup_19b037925dba1427223520a09fca33b5)
+        ;
+
+        
+    
+    
+                marker_98f5e8762c6c0b9b784758a09ac1a0af.setIcon(icon_775eee94352d3a8e42047023be04bbf9);
+            
+    
+            var marker_02e79af8b7500956f9bf63354f4967b8 = L.marker(
+                [38.55076835710225, -121.56854691253463],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_af6b7e1b6e11a72ad94886ec9811c6cf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e5e5ce7f198933d259ce00b8797257bb = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2cadaec9e69c25ce5e4fe00b132b97b3 = $(`<div id="html_2cadaec9e69c25ce5e4fe00b132b97b3" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 31<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $113.31<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 8 meses     </div>     </div>`)[0];
+                popup_e5e5ce7f198933d259ce00b8797257bb.setContent(html_2cadaec9e69c25ce5e4fe00b132b97b3);
+            
+        
+
+        marker_02e79af8b7500956f9bf63354f4967b8.bindPopup(popup_e5e5ce7f198933d259ce00b8797257bb)
+        ;
+
+        
+    
+    
+                marker_02e79af8b7500956f9bf63354f4967b8.setIcon(icon_af6b7e1b6e11a72ad94886ec9811c6cf);
+            
+    
+            var marker_520edd09cf893b40b219750562f768a3 = L.marker(
+                [34.02504443909463, -118.12575799881606],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_0d2468508a39a220d2ca46d24f78f541 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_86bfc00e29978b09cd532a0e6432c87d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_cf6538aeb48c48613ac56bf03d2519c1 = $(`<div id="html_cf6538aeb48c48613ac56bf03d2519c1" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 18<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $117.61<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 46 meses     </div>     </div>`)[0];
+                popup_86bfc00e29978b09cd532a0e6432c87d.setContent(html_cf6538aeb48c48613ac56bf03d2519c1);
+            
+        
+
+        marker_520edd09cf893b40b219750562f768a3.bindPopup(popup_86bfc00e29978b09cd532a0e6432c87d)
+        ;
+
+        
+    
+    
+                marker_520edd09cf893b40b219750562f768a3.setIcon(icon_0d2468508a39a220d2ca46d24f78f541);
+            
+    
+            var marker_a3b7e6226aab5d45113da26f7fc958f7 = L.marker(
+                [36.68382213812894, -119.67789048509296],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_34b5b5f7ae46980a149edba7d5145a5d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d3b304226971bbbb1ffc845584dc3774 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2fe41998d46356974d43848c40900624 = $(`<div id="html_2fe41998d46356974d43848c40900624" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 15<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $88.83<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 58 meses     </div>     </div>`)[0];
+                popup_d3b304226971bbbb1ffc845584dc3774.setContent(html_2fe41998d46356974d43848c40900624);
+            
+        
+
+        marker_a3b7e6226aab5d45113da26f7fc958f7.bindPopup(popup_d3b304226971bbbb1ffc845584dc3774)
+        ;
+
+        
+    
+    
+                marker_a3b7e6226aab5d45113da26f7fc958f7.setIcon(icon_34b5b5f7ae46980a149edba7d5145a5d);
+            
+    
+            var marker_cded3a07bd32d4024a66c28e65921a50 = L.marker(
+                [36.81057574793328, -119.76727131311162],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_0ce06f4a9ec93bfde139eca712e7164e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a7798e9c820d248996f729b75e3c649a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_0f0cfdad425ec314f1315dd83cee3e71 = $(`<div id="html_0f0cfdad425ec314f1315dd83cee3e71" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 99<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $93.58<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 2 meses     </div>     </div>`)[0];
+                popup_a7798e9c820d248996f729b75e3c649a.setContent(html_0f0cfdad425ec314f1315dd83cee3e71);
+            
+        
+
+        marker_cded3a07bd32d4024a66c28e65921a50.bindPopup(popup_a7798e9c820d248996f729b75e3c649a)
+        ;
+
+        
+    
+    
+                marker_cded3a07bd32d4024a66c28e65921a50.setIcon(icon_0ce06f4a9ec93bfde139eca712e7164e);
+            
+    
+            var marker_d3c808862c843be9484d722e48b22e90 = L.marker(
+                [34.14113154325506, -118.14919138343821],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_f4d80ab06e179755422e7c3b55eebb08 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ee7e22e8b76f1a1f8500c0451b604dd3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_70635d36234797f3ee1667b9e9561a09 = $(`<div id="html_70635d36234797f3ee1667b9e9561a09" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 2<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $102.29<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 4 meses     </div>     </div>`)[0];
+                popup_ee7e22e8b76f1a1f8500c0451b604dd3.setContent(html_70635d36234797f3ee1667b9e9561a09);
+            
+        
+
+        marker_d3c808862c843be9484d722e48b22e90.bindPopup(popup_ee7e22e8b76f1a1f8500c0451b604dd3)
+        ;
+
+        
+    
+    
+                marker_d3c808862c843be9484d722e48b22e90.setIcon(icon_f4d80ab06e179755422e7c3b55eebb08);
+            
+    
+            var marker_f3abb1a686d20df19a4822d7fa0c3491 = L.marker(
+                [37.92954628680428, -122.27413428889524],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_66a8f2c6d588d22594a76d9c5e0b62e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eb9c40399d8a5dcac5045c70d345aa11 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2210ed6854ebf882ca07bf97eb1b72a4 = $(`<div id="html_2210ed6854ebf882ca07bf97eb1b72a4" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 83<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $75.40<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 44 meses     </div>     </div>`)[0];
+                popup_eb9c40399d8a5dcac5045c70d345aa11.setContent(html_2210ed6854ebf882ca07bf97eb1b72a4);
+            
+        
+
+        marker_f3abb1a686d20df19a4822d7fa0c3491.bindPopup(popup_eb9c40399d8a5dcac5045c70d345aa11)
+        ;
+
+        
+    
+    
+                marker_f3abb1a686d20df19a4822d7fa0c3491.setIcon(icon_66a8f2c6d588d22594a76d9c5e0b62e6);
+            
+    
+            var marker_032cb11e7aa05b96619fcdb67dd70fcb = L.marker(
+                [37.81200904430272, -122.30917293206502],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_6a532a73664ae6c072e6cad88f2fa912 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_91e2f2166ecde9f84e0757fa85171a7f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_269fba8624cdedb4f3c27715bd59fc65 = $(`<div id="html_269fba8624cdedb4f3c27715bd59fc65" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 34<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $89.01<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 71 meses     </div>     </div>`)[0];
+                popup_91e2f2166ecde9f84e0757fa85171a7f.setContent(html_269fba8624cdedb4f3c27715bd59fc65);
+            
+        
+
+        marker_032cb11e7aa05b96619fcdb67dd70fcb.bindPopup(popup_91e2f2166ecde9f84e0757fa85171a7f)
+        ;
+
+        
+    
+    
+                marker_032cb11e7aa05b96619fcdb67dd70fcb.setIcon(icon_6a532a73664ae6c072e6cad88f2fa912);
+            
+    
+            var marker_7128351a4bfef0cf733a3f867458db8b = L.marker(
+                [38.52534973471841, -121.5032796353252],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_805074ed6d2910e8c666bdf34dd272ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ec883784cc8adfa436698663b8f2a2b1 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_146eb796f5dcc9e0b6dc1e9772f05df2 = $(`<div id="html_146eb796f5dcc9e0b6dc1e9772f05df2" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 82<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $68.70<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 1 meses     </div>     </div>`)[0];
+                popup_ec883784cc8adfa436698663b8f2a2b1.setContent(html_146eb796f5dcc9e0b6dc1e9772f05df2);
+            
+        
+
+        marker_7128351a4bfef0cf733a3f867458db8b.bindPopup(popup_ec883784cc8adfa436698663b8f2a2b1)
+        ;
+
+        
+    
+    
+                marker_7128351a4bfef0cf733a3f867458db8b.setIcon(icon_805074ed6d2910e8c666bdf34dd272ab);
+            
+    
+            var marker_4ffa8707f860b439d42628ac7b9e57f5 = L.marker(
+                [38.5603135730511, -121.49929216613462],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_401c1da9df37138b0207929a82ace426 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fdb72f787d24a023882a6174164471ef = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_af03b1e12f21c52d45368462c9c0a560 = $(`<div id="html_af03b1e12f21c52d45368462c9c0a560" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 42<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $80.09<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 23 meses     </div>     </div>`)[0];
+                popup_fdb72f787d24a023882a6174164471ef.setContent(html_af03b1e12f21c52d45368462c9c0a560);
+            
+        
+
+        marker_4ffa8707f860b439d42628ac7b9e57f5.bindPopup(popup_fdb72f787d24a023882a6174164471ef)
+        ;
+
+        
+    
+    
+                marker_4ffa8707f860b439d42628ac7b9e57f5.setIcon(icon_401c1da9df37138b0207929a82ace426);
+            
+    
+            var marker_f64f5b16207ff9677c79908ff0dd23bb = L.marker(
+                [37.72528334917856, -122.51079691672702],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_01e25ff2e8f4f44a6477fa955625cb65 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f7222f53859f9def7d8f4a95316c3c6b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_446267ba5c6d50f2f2b60f99d6535951 = $(`<div id="html_446267ba5c6d50f2f2b60f99d6535951" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 3<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $80.97<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 28 meses     </div>     </div>`)[0];
+                popup_f7222f53859f9def7d8f4a95316c3c6b.setContent(html_446267ba5c6d50f2f2b60f99d6535951);
+            
+        
+
+        marker_f64f5b16207ff9677c79908ff0dd23bb.bindPopup(popup_f7222f53859f9def7d8f4a95316c3c6b)
+        ;
+
+        
+    
+    
+                marker_f64f5b16207ff9677c79908ff0dd23bb.setIcon(icon_01e25ff2e8f4f44a6477fa955625cb65);
+            
+    
+            var marker_a3e9506331b9d1ab8155f737be2ff0c8 = L.marker(
+                [34.02712933553069, -118.19131608416774],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_64f4b1c5d51f6ea0f502fda79e42bb66 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8f73cbaef036859facf10cf918cd16ff = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a0d686ecad0096e5c27b7463bcb228e9 = $(`<div id="html_a0d686ecad0096e5c27b7463bcb228e9" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 21<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $114.73<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 19 meses     </div>     </div>`)[0];
+                popup_8f73cbaef036859facf10cf918cd16ff.setContent(html_a0d686ecad0096e5c27b7463bcb228e9);
+            
+        
+
+        marker_a3e9506331b9d1ab8155f737be2ff0c8.bindPopup(popup_8f73cbaef036859facf10cf918cd16ff)
+        ;
+
+        
+    
+    
+                marker_a3e9506331b9d1ab8155f737be2ff0c8.setIcon(icon_64f4b1c5d51f6ea0f502fda79e42bb66);
+            
+    
+            var marker_ffa3bc3f8ef58ba95a4b1cc717894af5 = L.marker(
+                [32.713310424628936, -116.93682927131474],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_698b71de1862539d65b544180269e1b4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_31cb7b49023c9d0e96e7fe533b584291 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_10b3950c5e96a7a773286990479d9924 = $(`<div id="html_10b3950c5e96a7a773286990479d9924" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 32<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $90.19<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 60 meses     </div>     </div>`)[0];
+                popup_31cb7b49023c9d0e96e7fe533b584291.setContent(html_10b3950c5e96a7a773286990479d9924);
+            
+        
+
+        marker_ffa3bc3f8ef58ba95a4b1cc717894af5.bindPopup(popup_31cb7b49023c9d0e96e7fe533b584291)
+        ;
+
+        
+    
+    
+                marker_ffa3bc3f8ef58ba95a4b1cc717894af5.setIcon(icon_698b71de1862539d65b544180269e1b4);
+            
+    
+            var marker_81a70fc4535d6d50e565f820c4930823 = L.marker(
+                [32.67930011696803, -117.3473488027713],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_c9fc717b1fb26ca3c048f4d01bcdcf8d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4a4b15df74bfd4a1ac5c8b37ace0311e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b92112b945c13479f0aeb7bf398c67a5 = $(`<div id="html_b92112b945c13479f0aeb7bf398c67a5" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 9<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $90.74<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 39 meses     </div>     </div>`)[0];
+                popup_4a4b15df74bfd4a1ac5c8b37ace0311e.setContent(html_b92112b945c13479f0aeb7bf398c67a5);
+            
+        
+
+        marker_81a70fc4535d6d50e565f820c4930823.bindPopup(popup_4a4b15df74bfd4a1ac5c8b37ace0311e)
+        ;
+
+        
+    
+    
+                marker_81a70fc4535d6d50e565f820c4930823.setIcon(icon_c9fc717b1fb26ca3c048f4d01bcdcf8d);
+            
+    
+            var marker_4adf024ad8bfc6481ea526c5488bfa22 = L.marker(
+                [32.6678272587908, -117.41274326428719],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_7174dc7a6b6353f550f1cac79978f4ac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ff492d5548fe03777c07dcaeb45a7f19 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b5a95f625b1e1e28acc926b0efdd8ccb = $(`<div id="html_b5a95f625b1e1e28acc926b0efdd8ccb" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 93<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $119.51<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 59 meses     </div>     </div>`)[0];
+                popup_ff492d5548fe03777c07dcaeb45a7f19.setContent(html_b5a95f625b1e1e28acc926b0efdd8ccb);
+            
+        
+
+        marker_4adf024ad8bfc6481ea526c5488bfa22.bindPopup(popup_ff492d5548fe03777c07dcaeb45a7f19)
+        ;
+
+        
+    
+    
+                marker_4adf024ad8bfc6481ea526c5488bfa22.setIcon(icon_7174dc7a6b6353f550f1cac79978f4ac);
+            
+    
+            var marker_f26c678d3f0228cf72aa74b3c234d822 = L.marker(
+                [33.94983840955655, -118.35134193153635],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_0f23aa00106fa7dd12f746a1cb1752de = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1a37a8aab5467df0308500ea87300596 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_41f5214a7988c189bb27bc337612520e = $(`<div id="html_41f5214a7988c189bb27bc337612520e" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 78<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $57.94<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 32 meses     </div>     </div>`)[0];
+                popup_1a37a8aab5467df0308500ea87300596.setContent(html_41f5214a7988c189bb27bc337612520e);
+            
+        
+
+        marker_f26c678d3f0228cf72aa74b3c234d822.bindPopup(popup_1a37a8aab5467df0308500ea87300596)
+        ;
+
+        
+    
+    
+                marker_f26c678d3f0228cf72aa74b3c234d822.setIcon(icon_0f23aa00106fa7dd12f746a1cb1752de);
+            
+    
+            var marker_3b0251ccf560e5c6df15442db4ff5a0b = L.marker(
+                [32.57037998214031, -116.84188391544753],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_c43d439a883137e99b7ea3f4d3c8d453 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ef60b6c83a03fd8035202655a6d7725 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_29e9268305fa39e772ae68ca493ca223 = $(`<div id="html_29e9268305fa39e772ae68ca493ca223" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 46<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $100.40<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 38 meses     </div>     </div>`)[0];
+                popup_1ef60b6c83a03fd8035202655a6d7725.setContent(html_29e9268305fa39e772ae68ca493ca223);
+            
+        
+
+        marker_3b0251ccf560e5c6df15442db4ff5a0b.bindPopup(popup_1ef60b6c83a03fd8035202655a6d7725)
+        ;
+
+        
+    
+    
+                marker_3b0251ccf560e5c6df15442db4ff5a0b.setIcon(icon_c43d439a883137e99b7ea3f4d3c8d453);
+            
+    
+            var marker_fd4abf322b909d5e10b9ab6569492b36 = L.marker(
+                [37.8199355991164, -122.28354650927656],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_63d925a793e9273f8e2b98a89ccb50d9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_54123b2ad78dc4de670bd1819b8b3721 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9d16119eb4a3c87ac37798f4267340fb = $(`<div id="html_9d16119eb4a3c87ac37798f4267340fb" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 14<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $71.87<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 70 meses     </div>     </div>`)[0];
+                popup_54123b2ad78dc4de670bd1819b8b3721.setContent(html_9d16119eb4a3c87ac37798f4267340fb);
+            
+        
+
+        marker_fd4abf322b909d5e10b9ab6569492b36.bindPopup(popup_54123b2ad78dc4de670bd1819b8b3721)
+        ;
+
+        
+    
+    
+                marker_fd4abf322b909d5e10b9ab6569492b36.setIcon(icon_63d925a793e9273f8e2b98a89ccb50d9);
+            
+    
+            var marker_9d9bb584777c186ae370664b22149816 = L.marker(
+                [38.57493292984206, -121.5537927072659],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_50503be41a26a70b95ef013af5eef49e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_288bcf1cfef68e13e423d5aa15bbeec4 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_36a1b28f7b2461fdcedca27760aa110a = $(`<div id="html_36a1b28f7b2461fdcedca27760aa110a" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 37<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $100.64<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 35 meses     </div>     </div>`)[0];
+                popup_288bcf1cfef68e13e423d5aa15bbeec4.setContent(html_36a1b28f7b2461fdcedca27760aa110a);
+            
+        
+
+        marker_9d9bb584777c186ae370664b22149816.bindPopup(popup_288bcf1cfef68e13e423d5aa15bbeec4)
+        ;
+
+        
+    
+    
+                marker_9d9bb584777c186ae370664b22149816.setIcon(icon_50503be41a26a70b95ef013af5eef49e);
+            
+    
+            var marker_91810c6f9bec3d7dc5e22c536f957fde = L.marker(
+                [34.04233691346601, -118.24824621101608],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_81cbab12f11748451c9699e96e3e3c8c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c1515a659ea5d23fcd4bb33706230975 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4ff43ecb3f2b9be7bfd136a19cf13614 = $(`<div id="html_4ff43ecb3f2b9be7bfd136a19cf13614" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 13<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $62.79<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 60 meses     </div>     </div>`)[0];
+                popup_c1515a659ea5d23fcd4bb33706230975.setContent(html_4ff43ecb3f2b9be7bfd136a19cf13614);
+            
+        
+
+        marker_91810c6f9bec3d7dc5e22c536f957fde.bindPopup(popup_c1515a659ea5d23fcd4bb33706230975)
+        ;
+
+        
+    
+    
+                marker_91810c6f9bec3d7dc5e22c536f957fde.setIcon(icon_81cbab12f11748451c9699e96e3e3c8c);
+            
+    
+            var marker_a9e2e708e6a8151dbf25534d4710bfc2 = L.marker(
+                [38.736413842560836, -121.57231419849288],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_42522919e7677504e320dd11b02e0f87 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ae80ab68cad1c80debb8f7847a941595 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_865a012ed1ba34e805cad615a2d1c73a = $(`<div id="html_865a012ed1ba34e805cad615a2d1c73a" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 72<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $107.70<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 54 meses     </div>     </div>`)[0];
+                popup_ae80ab68cad1c80debb8f7847a941595.setContent(html_865a012ed1ba34e805cad615a2d1c73a);
+            
+        
+
+        marker_a9e2e708e6a8151dbf25534d4710bfc2.bindPopup(popup_ae80ab68cad1c80debb8f7847a941595)
+        ;
+
+        
+    
+    
+                marker_a9e2e708e6a8151dbf25534d4710bfc2.setIcon(icon_42522919e7677504e320dd11b02e0f87);
+            
+    
+            var marker_0771726c11458f9271dd038162032889 = L.marker(
+                [37.752922951379944, -122.3544270038873],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_5a728a39b7bd1689f5ab72baa1e3512d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0ff72c96a56f50fc29750ab581307630 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5956139d8cccce80c940525a23f20dbc = $(`<div id="html_5956139d8cccce80c940525a23f20dbc" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 5<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $86.34<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 54 meses     </div>     </div>`)[0];
+                popup_0ff72c96a56f50fc29750ab581307630.setContent(html_5956139d8cccce80c940525a23f20dbc);
+            
+        
+
+        marker_0771726c11458f9271dd038162032889.bindPopup(popup_0ff72c96a56f50fc29750ab581307630)
+        ;
+
+        
+    
+    
+                marker_0771726c11458f9271dd038162032889.setIcon(icon_5a728a39b7bd1689f5ab72baa1e3512d);
+            
+    
+            var marker_83f171ef915c624186d78d24cc304d9a = L.marker(
+                [32.69045272806379, -117.0923189785461],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_a608c4ab7d0131e408b801e2a981a01f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_915706085c78238d14f11f2918e78103 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_04c6b0b8ac53c0ee856480a1a72f535e = $(`<div id="html_04c6b0b8ac53c0ee856480a1a72f535e" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 7<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $76.09<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 45 meses     </div>     </div>`)[0];
+                popup_915706085c78238d14f11f2918e78103.setContent(html_04c6b0b8ac53c0ee856480a1a72f535e);
+            
+        
+
+        marker_83f171ef915c624186d78d24cc304d9a.bindPopup(popup_915706085c78238d14f11f2918e78103)
+        ;
+
+        
+    
+    
+                marker_83f171ef915c624186d78d24cc304d9a.setIcon(icon_a608c4ab7d0131e408b801e2a981a01f);
+            
+    
+            var marker_77df0f78c5adfc5c214c2c4221a445ed = L.marker(
+                [38.570984567113975, -121.53499600123733],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_63af66e1a3284151e37e08f36c7a5228 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e8f8e123fb45e21fbf5bafa22b389aad = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_87b88c8c61b8d58c1bc6467aabe98f88 = $(`<div id="html_87b88c8c61b8d58c1bc6467aabe98f88" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 88<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $91.26<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 21 meses     </div>     </div>`)[0];
+                popup_e8f8e123fb45e21fbf5bafa22b389aad.setContent(html_87b88c8c61b8d58c1bc6467aabe98f88);
+            
+        
+
+        marker_77df0f78c5adfc5c214c2c4221a445ed.bindPopup(popup_e8f8e123fb45e21fbf5bafa22b389aad)
+        ;
+
+        
+    
+    
+                marker_77df0f78c5adfc5c214c2c4221a445ed.setIcon(icon_63af66e1a3284151e37e08f36c7a5228);
+            
+    
+            var marker_69e180f4daf194b995e267546057f2ae = L.marker(
+                [38.69707855081315, -121.67255064716423],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_317cfa704bc2958b1c459efe3450552f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eff1e126ccc12c5f601dfea1bb703f73 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a7bf90a486802826a2504a0dd4bfaa2b = $(`<div id="html_a7bf90a486802826a2504a0dd4bfaa2b" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 48<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $85.96<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 61 meses     </div>     </div>`)[0];
+                popup_eff1e126ccc12c5f601dfea1bb703f73.setContent(html_a7bf90a486802826a2504a0dd4bfaa2b);
+            
+        
+
+        marker_69e180f4daf194b995e267546057f2ae.bindPopup(popup_eff1e126ccc12c5f601dfea1bb703f73)
+        ;
+
+        
+    
+    
+                marker_69e180f4daf194b995e267546057f2ae.setIcon(icon_317cfa704bc2958b1c459efe3450552f);
+            
+    
+            var marker_4188d001d380a6f3a5daa66065f78ab9 = L.marker(
+                [36.76654769316532, -119.874800530145],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_2c63ce719884798e068f607070c47b9f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f941391507693f3d9b9db450f66b3721 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_33d588c8c4295a63e6158033edaba435 = $(`<div id="html_33d588c8c4295a63e6158033edaba435" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 73<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $119.28<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 38 meses     </div>     </div>`)[0];
+                popup_f941391507693f3d9b9db450f66b3721.setContent(html_33d588c8c4295a63e6158033edaba435);
+            
+        
+
+        marker_4188d001d380a6f3a5daa66065f78ab9.bindPopup(popup_f941391507693f3d9b9db450f66b3721)
+        ;
+
+        
+    
+    
+                marker_4188d001d380a6f3a5daa66065f78ab9.setIcon(icon_2c63ce719884798e068f607070c47b9f);
+            
+    
+            var marker_73c7d4fafdca6709e59237887b144f5e = L.marker(
+                [38.62429115965337, -121.38094051242165],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_72b63940f5933e640391bf7493affad2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8093398fd9a2074a02d2a7ea23dfd425 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a45241cd6188000cee5ad0711d1c5335 = $(`<div id="html_a45241cd6188000cee5ad0711d1c5335" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 97<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $73.49<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 24 meses     </div>     </div>`)[0];
+                popup_8093398fd9a2074a02d2a7ea23dfd425.setContent(html_a45241cd6188000cee5ad0711d1c5335);
+            
+        
+
+        marker_73c7d4fafdca6709e59237887b144f5e.bindPopup(popup_8093398fd9a2074a02d2a7ea23dfd425)
+        ;
+
+        
+    
+    
+                marker_73c7d4fafdca6709e59237887b144f5e.setIcon(icon_72b63940f5933e640391bf7493affad2);
+            
+    
+            var marker_fd27347dd33f40638c66757e96a76d2b = L.marker(
+                [32.545060991702925, -117.1408519315561],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_4235388ac9ebfa328f41b8c2c5634014 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ab7162374fe7ab05815325119f799c27 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_76ca9c9bbe5b747d0b9b212c0ceaf064 = $(`<div id="html_76ca9c9bbe5b747d0b9b212c0ceaf064" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 75<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $100.16<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 45 meses     </div>     </div>`)[0];
+                popup_ab7162374fe7ab05815325119f799c27.setContent(html_76ca9c9bbe5b747d0b9b212c0ceaf064);
+            
+        
+
+        marker_fd27347dd33f40638c66757e96a76d2b.bindPopup(popup_ab7162374fe7ab05815325119f799c27)
+        ;
+
+        
+    
+    
+                marker_fd27347dd33f40638c66757e96a76d2b.setIcon(icon_4235388ac9ebfa328f41b8c2c5634014);
+            
+    
+            var marker_e7205f125663702cd650444e03068d58 = L.marker(
+                [36.73765820012458, -119.64531145524806],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_a90e55ab1c7eae4bf3a7599d5e96efa1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f5bf352c530360f2d92a75e6f8edd55e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c9e349a6420e0b90f0aa7fabf94bdd20 = $(`<div id="html_c9e349a6420e0b90f0aa7fabf94bdd20" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 66<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $97.47<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 54 meses     </div>     </div>`)[0];
+                popup_f5bf352c530360f2d92a75e6f8edd55e.setContent(html_c9e349a6420e0b90f0aa7fabf94bdd20);
+            
+        
+
+        marker_e7205f125663702cd650444e03068d58.bindPopup(popup_f5bf352c530360f2d92a75e6f8edd55e)
+        ;
+
+        
+    
+    
+                marker_e7205f125663702cd650444e03068d58.setIcon(icon_a90e55ab1c7eae4bf3a7599d5e96efa1);
+            
+    
+            var marker_670588ea45ad732ebf3dda11fd09cefd = L.marker(
+                [37.866149356751386, -122.46800432088615],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_1719dbccc21933091be50530dfa684a9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f91a34c81f720900eb1f4511c09ae034 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ccae6372a15283e95aa4c87591776982 = $(`<div id="html_ccae6372a15283e95aa4c87591776982" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 1<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $66.71<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 63 meses     </div>     </div>`)[0];
+                popup_f91a34c81f720900eb1f4511c09ae034.setContent(html_ccae6372a15283e95aa4c87591776982);
+            
+        
+
+        marker_670588ea45ad732ebf3dda11fd09cefd.bindPopup(popup_f91a34c81f720900eb1f4511c09ae034)
+        ;
+
+        
+    
+    
+                marker_670588ea45ad732ebf3dda11fd09cefd.setIcon(icon_1719dbccc21933091be50530dfa684a9);
+            
+    
+            var marker_73faacc98df8c8665c4bb6daf937075e = L.marker(
+                [36.588948199935835, -119.76462637048567],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_d4163817e15fbf6db1d3d79e30685543 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1cc42e0522942fcacfa10c00b08c4c21 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c192247bdabf0c4cb8dfb4510595f06d = $(`<div id="html_c192247bdabf0c4cb8dfb4510595f06d" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 76<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $104.83<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 16 meses     </div>     </div>`)[0];
+                popup_1cc42e0522942fcacfa10c00b08c4c21.setContent(html_c192247bdabf0c4cb8dfb4510595f06d);
+            
+        
+
+        marker_73faacc98df8c8665c4bb6daf937075e.bindPopup(popup_1cc42e0522942fcacfa10c00b08c4c21)
+        ;
+
+        
+    
+    
+                marker_73faacc98df8c8665c4bb6daf937075e.setIcon(icon_d4163817e15fbf6db1d3d79e30685543);
+            
+    
+            var marker_3a03fc817fb1a7f1859436358dcd4768 = L.marker(
+                [36.693227415543205, -119.89891488665455],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_e5442a514790b7f53efa895c51d5472f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2abb78631df99fc8e1eb53a7a4d48b42 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_36c3d96265a105fa59ec9346df9275f3 = $(`<div id="html_36c3d96265a105fa59ec9346df9275f3" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 22<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $76.07<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 25 meses     </div>     </div>`)[0];
+                popup_2abb78631df99fc8e1eb53a7a4d48b42.setContent(html_36c3d96265a105fa59ec9346df9275f3);
+            
+        
+
+        marker_3a03fc817fb1a7f1859436358dcd4768.bindPopup(popup_2abb78631df99fc8e1eb53a7a4d48b42)
+        ;
+
+        
+    
+    
+                marker_3a03fc817fb1a7f1859436358dcd4768.setIcon(icon_e5442a514790b7f53efa895c51d5472f);
+            
+    
+            var marker_a7e3458b6ff72fdff7b00c1dfb9680f1 = L.marker(
+                [32.91465464353265, -117.09995639710117],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_0bf8e80f0b5172cb9fed7915533b796d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f25bc9c596c0f125c2197c3a54ca782b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5b4a9227894887f323adee5c239a2f93 = $(`<div id="html_5b4a9227894887f323adee5c239a2f93" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 57<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $56.92<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 5 meses     </div>     </div>`)[0];
+                popup_f25bc9c596c0f125c2197c3a54ca782b.setContent(html_5b4a9227894887f323adee5c239a2f93);
+            
+        
+
+        marker_a7e3458b6ff72fdff7b00c1dfb9680f1.bindPopup(popup_f25bc9c596c0f125c2197c3a54ca782b)
+        ;
+
+        
+    
+    
+                marker_a7e3458b6ff72fdff7b00c1dfb9680f1.setIcon(icon_0bf8e80f0b5172cb9fed7915533b796d);
+            
+    
+            var marker_04197923ec03f6db55e4b7ed8f459aec = L.marker(
+                [37.673208700331486, -122.33203488656088],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_b345df5f902da86d3f90aaa38f870deb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c2012bb58b54034448647db5f5a8cd9e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b117b98de8585c83654af1224cd75198 = $(`<div id="html_b117b98de8585c83654af1224cd75198" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 89<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $79.92<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 13 meses     </div>     </div>`)[0];
+                popup_c2012bb58b54034448647db5f5a8cd9e.setContent(html_b117b98de8585c83654af1224cd75198);
+            
+        
+
+        marker_04197923ec03f6db55e4b7ed8f459aec.bindPopup(popup_c2012bb58b54034448647db5f5a8cd9e)
+        ;
+
+        
+    
+    
+                marker_04197923ec03f6db55e4b7ed8f459aec.setIcon(icon_b345df5f902da86d3f90aaa38f870deb);
+            
+    
+            var marker_33d96a8e28ae1e3a69b5c1254d15c201 = L.marker(
+                [36.62062813888109, -119.83590763661662],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_f91ee2ef8b61cfbbe6ba3df858a6cc71 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8f4a02343401da24002c8db031a3f3ea = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c1a58a884ca7efc31cb9ca2aea3c85a5 = $(`<div id="html_c1a58a884ca7efc31cb9ca2aea3c85a5" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 71<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $109.94<br>         <b>Servicio:</b> DSL<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 54 meses     </div>     </div>`)[0];
+                popup_8f4a02343401da24002c8db031a3f3ea.setContent(html_c1a58a884ca7efc31cb9ca2aea3c85a5);
+            
+        
+
+        marker_33d96a8e28ae1e3a69b5c1254d15c201.bindPopup(popup_8f4a02343401da24002c8db031a3f3ea)
+        ;
+
+        
+    
+    
+                marker_33d96a8e28ae1e3a69b5c1254d15c201.setIcon(icon_f91ee2ef8b61cfbbe6ba3df858a6cc71);
+            
+    
+            var marker_0894e6bd928eabb51d2f0739f69bd226 = L.marker(
+                [38.37048848166316, -121.49071412517661],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_33f516d531393cd69ea4b827866c2bcd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_43cd807f1d9d767263bd81feafde5bcc = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5276c12326b7fccacbd2ff30b01aa8aa = $(`<div id="html_5276c12326b7fccacbd2ff30b01aa8aa" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 77<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:green">No</b><br>         <b>Cargo Mensual:</b> $118.40<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Month-to-month<br>         <b>Antigüedad:</b> 60 meses     </div>     </div>`)[0];
+                popup_43cd807f1d9d767263bd81feafde5bcc.setContent(html_5276c12326b7fccacbd2ff30b01aa8aa);
+            
+        
+
+        marker_0894e6bd928eabb51d2f0739f69bd226.bindPopup(popup_43cd807f1d9d767263bd81feafde5bcc)
+        ;
+
+        
+    
+    
+                marker_0894e6bd928eabb51d2f0739f69bd226.setIcon(icon_33f516d531393cd69ea4b827866c2bcd);
+            
+    
+            var marker_c1edb11ca2f62774c4e18f6b66c6cefb = L.marker(
+                [36.71804395177744, -119.6300780461121],
+                {
+}
+            ).addTo(marker_cluster_b4da91ad55b5914e44f530a2232bcbaf);
+        
+    
+            var icon_44bb7089dfbd6396d7af2a5b8df15579 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_88c646af6c78a6b696d80eb5395e382a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_49ce2d96ef2a2a46d85b019e283c108b = $(`<div id="html_49ce2d96ef2a2a46d85b019e283c108b" style="width: 100.0%; height: 100.0%;">     <div style='font-family:sans-serif; width:180px; color:black'>         <b>ID:</b> 79<br>         <hr style="margin:5px 0">         <b>Estado:</b> <b style="color:red">Yes</b><br>         <b>Cargo Mensual:</b> $92.55<br>         <b>Servicio:</b> Fiber optic<br>         <b>Contrato:</b> Two year<br>         <b>Antigüedad:</b> 11 meses     </div>     </div>`)[0];
+                popup_88c646af6c78a6b696d80eb5395e382a.setContent(html_49ce2d96ef2a2a46d85b019e283c108b);
+            
+        
+
+        marker_c1edb11ca2f62774c4e18f6b66c6cefb.bindPopup(popup_88c646af6c78a6b696d80eb5395e382a)
+        ;
+
+        
+    
+    
+                marker_c1edb11ca2f62774c4e18f6b66c6cefb.setIcon(icon_44bb7089dfbd6396d7af2a5b8df15579);
+            
+    
+            marker_cluster_b4da91ad55b5914e44f530a2232bcbaf.addTo(map_7b19ed39ac662bc6d33fdf733dbffcc7);
+        
+    
+            var layer_control_07dcf79c0b6b4d8bbc35021cb626d331_layers = {
+                base_layers : {
+                    "cartodbdarkmatter" : tile_layer_fd9a22bf215bbdc2c1df63d572ab032c,
+                },
+                overlays :  {
+                    "\ud83d\udd25 Mapa de Calor (P\u00e9rdida de Ingresos)" : heat_map_98c0ab66ddd008d1ecd07feb61f4f0bb,
+                    "\ud83d\udc65 Clientes (Detalle)" : marker_cluster_b4da91ad55b5914e44f530a2232bcbaf,
+                },
+            };
+            let layer_control_07dcf79c0b6b4d8bbc35021cb626d331 = L.control.layers(
+                layer_control_07dcf79c0b6b4d8bbc35021cb626d331_layers.base_layers,
+                layer_control_07dcf79c0b6b4d8bbc35021cb626d331_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_7b19ed39ac662bc6d33fdf733dbffcc7);
+
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topleft",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_7b19ed39ac662bc6d33fdf733dbffcc7);
+        
+</script>
+</html>
